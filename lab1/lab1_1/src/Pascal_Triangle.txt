@@ -1,0 +1,13 @@
+Print the Pascal's triangle of height 4.
+   1
+  1 1
+ 1 2 1
+1 3 3 1
+ 
+Note that last line does not have any
+space before the first 1.
+ 
+Hint 1: Start thinking from the bottom. Draw grids on paper.
+Hint 2: How many spaces does fourth (last) line need
+		before the first 1?
+		What about third line, second line and so on?
