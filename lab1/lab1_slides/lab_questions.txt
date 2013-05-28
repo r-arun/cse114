@@ -1,6 +1,18 @@
 Part 1
 ======
 1. Write a Java Program to print "Hello World!" in the console.
+
+Sample Solution
+===============
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+
+}
+
 2. Write a Java Program to print your name, age and weight.
 3. Write a Java Program to print a right angled triangle of height 4. In particular print a pattern made of asteriks (*) that looks like this.
 
@@ -9,18 +21,41 @@ Part 1
 ***
 ****
 
-4. Write a Java Program to print a person's name, age and weight. Use variables of type String, int and float.
+4. Write a Java Program to print a person's name, age and weight. Use variables of type String, int and double.
+
+Sample Solution
+===============
+
+public class VariablesExample {
+	public static void main(String[] args) {
+		String name;
+		int age;
+		double weight;
+		name = "Harry";
+		age = 20;
+		weight = 150.6;
+		System.out.print("Your Name is ");
+		System.out.println(name);
+		System.out.print("Your Age is ");
+		System.out.println(age+" years");
+		System.out.print("Your weight is ");
+		System.out.println(weight+" lb");
+	}
+
+}
 
 Part 2
 ======
 5. Write a Java Program that gets a person's name, age and weight as inputs from standard input and print these in the below format as output.
 
 Sample Input:
+-------------
 Enter Name: Harry
 Enter Age: 20
 Enter Weight: 157.6
 
 Sample Output:
+--------------
 Your Name is Harry.
 Your Age is 20 years.
 Your Weight is 157.6 lbs.
@@ -31,6 +66,33 @@ b) Subtraction: 5 - 4 = 1
 c) Mutiplication: 6 * 4 = 24
 d) Division: 16 / 4 = 4. Also 6 / 4 = 2. (Just the quotient).
 e) Modulo: 6 % 4 = 2. 8 % 4 = 0. (Remainder on division).
+
+Sample Solution:
+----------------
+/**
+ * Arithmetic in Java
+ */
+import java.util.Scanner;
+public class ArithmeticExamples {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		int a, b;
+		a = input.nextInt();
+		b = input.nextInt();
+		int sum = a + b;
+		int diff = a - b;
+		int mult = a * b;
+		int div = a / b;
+		int mod = a % b;
+		System.out.println("Sum is " + sum);
+		System.out.println("Difference is " + diff);
+		System.out.println("Product is " + mult);
+		System.out.println("Quotient is " + div);
+		System.out.println("Modulo is " + mod);
+	}
+
+}
 
 7. Write a Java program to get two floating point numbers as input and perform the same operations as Question 6.
 
