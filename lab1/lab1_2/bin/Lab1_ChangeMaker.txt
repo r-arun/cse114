@@ -1,0 +1,38 @@
+Your friend works at a cash counter. Whenever she has to
+return some change, she needs to calculate the type of coins
+she must return. She dispenses change based on the below
+conditions.
+
+1. First give change in quarters (25 cents) (as much as possible).
+2. Then in dimes (10 cents).
+3. Then in nickel (5 cents).
+4. Then in penny (1 cent).
+
+Read the sample input and output for hints.
+
+Sample Input:
+80
+
+Sample Output:
+Number of Quarters: 1
+Number of Dimes: 0
+Number of Nickels: 1
+Number of Pennies: 0
+
+Sample Input:
+99
+
+Sample Output:
+Number of Quarters: 3
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
+
+Sample Input:
+99
+
+Sample Output:
+Number of Quarters: 0
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
