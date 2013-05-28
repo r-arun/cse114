@@ -1,0 +1,130 @@
+Part 1
+======
+1. Write a Java Program to print "Hello World!" in the console.
+2. Write a Java Program to print your name, age and weight.
+3. Write a Java Program to print a right angled triangle of height 4. In particular print a pattern made of asteriks (*) that looks like this.
+
+*
+**
+***
+****
+
+4. Write a Java Program to print a person's name, age and weight. Use variables of type String, int and float.
+
+Part 2
+======
+5. Write a Java Program that gets a person's name, age and weight as inputs from standard input and print these in the below format as output.
+
+Sample Input:
+Enter Name: Harry
+Enter Age: 20
+Enter Weight: 157.6
+
+Sample Output:
+Your Name is Harry.
+Your Age is 20 years.
+Your Weight is 157.6 lbs.
+
+6. Write a Java program to get two integers as input and perform the below operations on the variables.
+a) Addition: 5 + 4 = 9
+b) Subtraction: 5 - 4 = 1
+c) Mutiplication: 6 * 4 = 24
+d) Division: 16 / 4 = 4. Also 6 / 4 = 2. (Just the quotient).
+e) Modulo: 6 % 4 = 2. 8 % 4 = 0. (Remainder on division).
+
+7. Write a Java program to get two floating point numbers as input and perform the same operations as Question 6.
+
+8. Debug the below program. 
+import java.util.Scanner;
+/* Program for debug.
+ * This piece of code has some bugs.
+ * Other than bugs it has code written
+ * in bad style. 
+ * Correct the bugs and rewrite the code
+ * in a good style.
+ * Hint: Follow the squiggly lines
+ */
+public class DebugExample {
+	public static void main(String args) {
+		Scanner input = new Scanner(System.in);
+		int a, b;
+		int sum, Diff, mod;
+		a = input.nextInt(); b = input.nextInt();
+		sum = a+b;
+		Diff = a-b;
+		int mult = a* b;
+		div = a /b;
+		mod = a%b;
+		System.out.println("Sum is ",sum);
+		System.out.println("Difference is "+diff);
+		System.out.println("Product is "+mult);
+		System.out.println("Quotient is "+div);
+		System.out.println("Modulo is "+mod);
+		input.close();
+	}
+}
+		   
+Bonus
+=====
+9. Write a Java Program to print the asterik triangle in a flipped pattern. The pattern must look the one below.
+   *
+  **
+ ***
+****
+
+10. Print the Pascal's triangle of height 4.
+   1
+  1 1
+ 1 2 1
+1 3 3 1
+ 
+Note that last line does not have any
+space before the first 1.
+ 
+Hint 1: Start thinking from the bottom. Draw grids on paper.
+Hint 2: How many spaces does fourth (last) line need
+		before the first 1?
+		What about third line, second line and so on?
+
+11. ChangeMaker.
+Your friend works at a cash counter. Whenever she has to
+return some change, she needs to calculate the type of coins
+she must return. She dispenses change based on the below
+conditions.
+
+1. First give change in quarters (25 cents) (as much as possible).
+2. Then in dimes (10 cents).
+3. Then in nickel (5 cents).
+4. Then in penny (1 cent).
+
+You have learnt Java Programming today and help her out
+to quickly dispense change!
+
+Read the sample input and output for hints.
+
+Sample Input:
+80
+
+Sample Output:
+Number of Quarters: 3
+Number of Dimes: 0
+Number of Nickels: 1
+Number of Pennies: 0
+
+Sample Input:
+99
+
+Sample Output:
+Number of Quarters: 3
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
+
+Sample Input:
+24
+
+Sample Output:
+Number of Quarters: 0
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
