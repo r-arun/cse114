@@ -42,7 +42,7 @@ public class SimpleAddition {
 
 4. Hogwarts has 10 different dorms for visitors (numbered 0 to 9).
 Each visitor has a unique 4 digit ID ranging from (1000 to 9999), and is
-assigned a dorm based on the third digit from the left. 
+assigned a dorm based on the third digit from the right. 
 Write a Java class to get the visitor ID as an input and print their assigned
 dorm number.
 
@@ -70,7 +70,7 @@ public class ThirdDigit {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int num = input.nextInt();
-		int quotient = num / 100; //Fourth and Third  digits from left in quotient
+		int quotient = num / 100; //Fourth and Third  digits from right in quotient
 		int dorm = quotient % 10; //Third digit
 		System.out.println("Dorm = "+dorm);
 	}
