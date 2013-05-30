@@ -77,8 +77,8 @@ public class ThirdDigit {
 
 }
 
-5. Given a 4 digit number print each digit of the number from left (unit's position)
-to right (thousand's position). For printing your output follow the pattern of the Sample Output.
+5. Given a 4 digit number print each digit of the number from right (unit's position)
+to left (thousand's position). For printing your output follow the pattern of the Sample Output.
 
 Sample Input
 ------------
