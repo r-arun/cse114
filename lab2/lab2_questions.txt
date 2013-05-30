@@ -1,4 +1,56 @@
-1. This program has two variables a and b with values 10 and 20 respectively.
+Note: 
+	a. This document has 8 questions. 
+
+	b. If you have completed all 8, we have bonus questions for you!
+
+	c. You have to write solutions for each question in a new Java class.
+
+	d. Contact the TAs if you have coded the correct solution to evaluate your code.
+	You will get partial credits for solutions that may contain minor errors.
+	You will be given opportunity to correct bugs and get the code re-evaluated.
+	Feel free to talk to TAs if you have trouble coding
+	the solution. Two questions do not need coding solutions as noted below.
+
+	e. Question 4 gives you a program and asks you to find the
+	wrong inputs that cause the code to fail.
+
+	Question 5 is a warm up question and solution is provided. But you are
+	encouraged to code your own solution for practice. You can modify the code
+	to answer question 6.
+
+1. Question from Lab 1.
+ Debug the below program.
+/* Program for debug.
+ * This piece of code has some bugs.
+ * Other than bugs it has code written
+ * in bad style.
+ * Correct the bugs and rewrite the code
+ * in a good style.
+ * Hint: Follow the squiggly lines
+ */
+import java.util.Scanner;
+
+public class DebugExample {
+    public static void main(String args) {
+        Scanner input = new Scanner(System.in);
+        int a, b;
+        int sum, Diff, mod;
+        a = input.nextInt(); b = input.nextInt();
+        sum = a+b;
+        Diff = a-b;
+        int mult = a* b;
+        div = a /b; 
+        mod = a%b;
+        System.out.println("Sum is ",sum);
+        System.out.println("Difference is "+diff);
+        System.out.println("Product is "+mult);
+        System.out.println("Quotient is "+div);
+        System.out.println("Modulo is "+mod);
+        input.close();
+    }   
+}
+
+2. This program has two variables a and b with values 10 and 20 respectively.
 Fill in the code so that their values are swapped. That is a = 20 and b = 10. 
 
 public class VariableSwap {
@@ -20,10 +72,10 @@ public class VariableSwap {
 
 }
 
-2. Follow up on Question1: 
+3. Follow up on Question1: 
 Write a Java class to swap the variables without introducing any new variables.
 
-3. The code snippet below performs simple addition. Does the program always
+4. The code snippet below performs simple addition. Does the program always
 print the correct sum? If it does not, provide values of a and b for which
 the sum printed is incorrect.
 
@@ -40,7 +92,7 @@ public class SimpleAddition {
 
 }
 
-4. Hogwarts has 10 different dorms for visitors (numbered 0 to 9).
+5. Hogwarts has 10 different dorms for visitors (numbered 0 to 9).
 Each visitor has a unique 4 digit ID ranging from (1000 to 9999), and is
 assigned a dorm based on the third digit from the right. 
 Write a Java class to get the visitor ID as an input and print their assigned
@@ -77,7 +129,7 @@ public class ThirdDigit {
 
 }
 
-5. Given a 4 digit number print each digit of the number from right (unit's position)
+6. Given a 4 digit number print each digit of the number from right (unit's position)
 to left (thousand's position). For printing your output follow the pattern of the Sample Output.
 
 Sample Input
@@ -91,16 +143,16 @@ Second digit = 4
 Third digit = 1
 Fourth digit = 1
 
-6. Question from Lab 1: ChangeMaker.
+7. Question from Lab 1: ChangeMaker.
 Your friend works at a cash counter. Whenever she has to
 return some change, she needs to calculate the type of coins
 she must return. She dispenses change based on the below
 conditions.
 
-1. First give change in quarters (25 cents) (as much as possible).
-2. Then in dimes (10 cents).
-3. Then in nickel (5 cents).
-4. Then in penny (1 cent).
+	1. First give change in quarters (25 cents) (as much as possible).
+	2. Then in dimes (10 cents).
+	3. Then in nickel (5 cents).
+	4. Then in penny (1 cent).
 
 You have learnt Java Programming today and help her out
 to quickly dispense change!
@@ -158,7 +210,7 @@ Explanation:
 -------------
 Same as the above except for the quarters. Notice the similarity between 99 cents and 24 cents.
 
-7. Follow up question from Question 5:
+8. Follow up question from Question 5:
 Print the number of coins of a type only if the number is greater than 0. For example
 
 Sample Input:
