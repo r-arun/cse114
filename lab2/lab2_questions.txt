@@ -1,0 +1,185 @@
+1. This program has two variables a and b with values 10 and 20 respectively.
+Fill in the code so that their values are swapped. That is a = 20 and b = 10. 
+
+public class VariableSwap {
+
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		System.out.println("Before Swapping");
+		System.out.print("a = "+a);
+		System.out.println(" b = "+b);
+		
+		//Insert your code here.
+		
+		System.out.println("After Swapping");
+		System.out.print("a = "+a);
+		System.out.println(" b = "+b);
+		
+	}
+
+}
+
+2. Follow up on Question1: 
+Write a Java class to swap the variables without introducing any new variables.
+
+3. The code snippet below performs simple addition. Does the program always
+print the correct sum? If it does not, provide values of a and b for which
+the sum printed is incorrect.
+
+import java.util.Scanner;
+public class SimpleAddition {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int a = input.nextInt();
+		int b = input.nextInt();
+		int sum = a + b;
+		System.out.println("Sum = "+sum);
+	}
+
+}
+
+4. Hogwarts has 10 different dorms for visitors (numbered 0 to 9).
+Each visitor has a unique 4 digit ID ranging from (1000 to 9999), and is
+assigned a dorm based on the third digit from the left. 
+Write a Java class to get the visitor ID as an input and print their assigned
+dorm number.
+
+Sample Input:
+-------------
+1390
+
+Sample Output:
+--------------
+Dorm = 3
+
+Sample Input:
+-------------
+9756
+
+Sample Output:
+--------------
+Dorm = 7
+
+Sample Solution:
+----------------
+import java.util.Scanner;
+public class ThirdDigit {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+		int quotient = num / 100; //Fourth and Third  digits from left in quotient
+		int dorm = quotient % 10; //Third digit
+		System.out.println("Dorm = "+dorm);
+	}
+
+}
+
+5. Given a 4 digit number print each digit of the number from left (unit's position)
+to right (thousand's position). For printing your output follow the pattern of the Sample Output.
+
+Sample Input
+------------
+1140
+
+Sample Ouput
+------------
+First digit = 0
+Second digit = 4
+Third digit = 1
+Fourth digit = 1
+
+6. Question from Lab 1: ChangeMaker.
+Your friend works at a cash counter. Whenever she has to
+return some change, she needs to calculate the type of coins
+she must return. She dispenses change based on the below
+conditions.
+
+1. First give change in quarters (25 cents) (as much as possible).
+2. Then in dimes (10 cents).
+3. Then in nickel (5 cents).
+4. Then in penny (1 cent).
+
+You have learnt Java Programming today and help her out
+to quickly dispense change!
+
+Read the sample input and output for hints. 
+
+Sample Input:
+-------------
+80
+
+Sample Output:
+-------------
+Number of Quarters: 3
+Number of Dimes: 0
+Number of Nickels: 1
+Number of Pennies: 0
+
+Explanation:
+-------------
+The fastest way to dispense this is to give 3 Quarters - 75 cents.
+That leaves only 5 cents to dispense. 1 dime will make it 85, but we need
+to give only 80 cents. So no dime will be give. A nickle will add 5 and make
+it 80 cents. We are done and we need not hand out pennies.
+
+Sample Input:
+-------------
+99
+
+Sample Output:
+-------------
+Number of Quarters: 3
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
+
+Explanation:
+-------------
+3 Quarters will make it a 75. You now have 24 more cents. 2 more dimes will add 20 more. So we are at 95.
+A single nickle will make it 100, but we should give only 99 cents. So no nickle
+is added. Remain 4 cents are dispensed in pennies.
+
+Sample Input:
+-------------
+24
+
+
+Sample Output:
+-------------
+Number of Quarters: 0
+Number of Dimes: 2
+Number of Nickels: 0
+Number of Pennies: 4
+
+Explanation:
+-------------
+Same as the above except for the quarters. Notice the similarity between 99 cents and 24 cents.
+
+7. Follow up question from Question 5:
+Print the number of coins of a type only if the number is greater than 0. For example
+
+Sample Input:
+-------------
+80
+
+Sample Output:
+-------------
+Number of Quarters: 3
+Number of Nickels: 1
+
+Note: Dimes and Pennies are not printed.
+
+Sample Input:
+-------------
+99
+
+Sample Output:
+-------------
+Number of Quarters: 3
+Number of Dimes: 2
+Number of Pennies: 4
+
+Note: Number of nickels is not printed here.
