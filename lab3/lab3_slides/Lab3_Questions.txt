@@ -1,0 +1,176 @@
+1. Warmp Up program:
+--------------------
+Write a Java class to get two integers as input and find the bigger number. If they are equal, print that both numbers are equal.
+
+Sample Code:
+------------
+import java.util.Scanner;
+public class BigTwo {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the first number");
+		int a = input.nextInt();
+		System.out.println("Enter the second number");
+		int b = input.nextInt();
+		if( a > b){
+			System.out.println(a+" is bigger than "+b);
+		}
+		if( a < b){
+			System.out.println(b+" is bigger than "+a);
+		}
+		if( a == b){
+			System.out.println(a+" is equal to "+b);
+		}
+
+	}
+
+}
+
+2. Warm Up program:
+-------------------
+Write a Java class to input a positive integer and find if it is even or odd.
+
+Sample Code:
+------------
+import java.util.Scanner;
+public class Even {
+
+	public static void main(String[] args) {
+		System.out.println("Enter a positive interger as input");
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+		int remainder = num % 2;
+		if(remainder == 0){
+			System.out.println(num+ " is an even number");
+		}
+		else{
+			System.out.println(num+" is an odd number");
+		}
+		System.out.println("End of Processing");
+	}
+
+}
+
+3. Write a Java class to get three integers as input and find the biggest of three.
+Make sure your program runs for different input cases.
+Sample Input:
+-------------
+Enter three numbers:
+7 10 20
+Sample Output:
+--------------
+20 is the biggest number.
+
+4. An integer is a good number if it is a multiple of either 2 or 3 (not both).
+If an integer is a multiple of both 2 and 3, it is an excellent number. If a 
+number is neither good nor excellent it is a bad number.
+
+Write a Java class to get an integer as input and print whether a number is
+good, excellent or bad.
+
+Sample Input:
+-------------
+8
+Sample Output:
+--------------
+Good Number
+
+Sample Input:
+-------------
+6
+Sample Output:
+--------------
+Excellent Number
+
+Sample Input:
+-------------
+7
+Sample Output:
+--------------
+Bad Number
+
+5. A weather map has regions colored in different colors depending on the
+temperature. Our weather map uses the below colors based on the temperature
+range.
+
+Greater or equal than 40 - Red
+From 30 till 40 - Yellow (30 <= temp < 40)
+From 20 till 30 - Green (20 <= temp < 30)
+From 10 till 20 - Blue (10 <= temp < 20)
+Below 10 - White
+
+Write a Java program to get the temperature of a region as an integer and
+print the color for the region. Use if - else structure. But you are not 
+allowed to use '&&' or '&'
+
+6. Do the weather map problem using 'if' conditional structure, but do not use any 'else'.
+Hint: Use '&&'.
+
+7. Read the below program and give suitable inputs for variables a and c, such that the lines
+a is 4.0
+d is 4
+
+are printed when you run the program. Can you always ensure that both lines
+get printed?
+
+import java.util.Scanner;
+public class ExpressionEval {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a positive integer as input");
+		int a = input.nextInt();
+		System.out.println("Enter a real number as input");
+		double c = input.nextDouble();
+		if(a == 4.0){
+			System.out.println("a is 4.0"); //Line to be printed
+		}
+		double e = (4/3.0) * 3.0;
+		if(e == 4){
+			System.out.println("e is 4.0");
+		}
+		double d = (4/3.0 + 1.0 - 0.5 - c)*3.0;
+		if(a == d){
+			System.out.println("d is 4"); //Line to be printed
+		}
+		System.out.println("End of execution");
+	}
+
+}
+
+8. Make use of switch case statements to get the college year as input and
+print the below.
+1 -> Freshman
+2 -> Sophomore
+3 -> Junior
+4 or above -> Senior
+
+Make sure your program handles cases when incorrect input is given.
+
+9. Five Days of Summer:
+Your local store provides winners of a lucky draw with gifts on five days.
+The gift details are given below.
+
+Day 1: 1 Microphone
+Day 2: 2 Loudspeakers
+Day 3: 3 Keyboards
+Day 4: 4 Java Books
+Day 5: 5 iPhones
+
+The gifts are accumulative. The winner of any day gets the gift for the day
+and the gifts for all previous days during which a gift was given.
+
+ For example Day 3 winner gets:
+ 3 Keyboards
+ 2 Loudspeakers (Day 2)
+ 1 Microphone (Day 1)
+
+First listed is Day 3 gift (3 Keyboards), then gifts from previous days in order
+2 Loudspeakers (Day 2) and 1 Microphone (Day 1).
+
+Write a Java program to get a day (1 - 5) as input and print the gifts a
+winner on the day will win. While printing, list the gifts based on the
+descending order of days (as in Day 3 example above). Also ensure that you
+get valid a day number as input.

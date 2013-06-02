@@ -18,7 +18,7 @@ public class FiveDays {
 		case 2:
 			System.out.println("2 Loudspeakers");
 		case 1:
-			System.out.println("1 Microphone");
+//			System.out.println("1 Microphone");
 		}
 	}
 
