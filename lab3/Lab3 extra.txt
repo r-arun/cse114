@@ -1,0 +1,8 @@
+Extra :-
+1) Given a 3 digit number find out whether it is an Armstrong number
+2) Given a 5 digit number find out whether it is a Palindrome
+3) Currency Conversion problem:-
+   User enters 0 to convert US $ to Euros
+   User enters 1 to convert Euros to US $
+   After entering the mode of conversion, the user enters the amount to be converted.
+4) Write a program which takes decimal input and converts the input to hex. (Approach will be checked). This problem can be solved with a single if-else statement.
