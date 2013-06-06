@@ -1,8 +1,76 @@
-1) calculator using switch
-2) Write a Java program to find the smallest of three numbers using ternary operators.
-3) Divisibility test:-
+1. Power palindrome (Reuse Extra credit from Lab 3 if you solved it)
+A number is a palindrome if the number reads the same on reversal. That is the 1st digit from
+left is equal to 1st digit from right; 2nd digit from left equals 2nd digit from right and so on.
+For any palindromic number, the ith digit from left has as its "corresponding digit" ith digit
+from right and vice-versa. For 4 digit numbers, 1st and 4th (both from left) are corresponding.
+2nd and 3rd are corresponding. A number is a power palindrome if a digit is equal to either the square
+or a square root of its corresponding digit. For example 2114 is a power palindrome.
+1st digit (2) is square root of 4th digit (4). 
+2nd digit (1) is square/ square root of 3rd digit (1). 
+3rd digit (1) is square/ square root of 2nd digit (1). 
+4th digit (4) is square of 1st digit (2). 
+Write a Java class to input a 4 digit postive integer and check if it is a power palindrome. Make sure
+that user inputs only a four digit number. Hint: Checking if a digit is square of its corresponding
+digit is sufficient, square root test is taken care of by this indirectly.
+2. Divisibility test:-
    Enter test number
    Enter divisibility number.
    Check if test number is divisible by divisibility number.
    Use switch case, and write logic for divisibility (dont use mod operator). 
-   divisibility numbers will be from (2,3,4,5,6,8,9,11)
+   divisibility numbers will be from (2 and 5).
+
+
+3. Write a Java class to implement a simple calculator using switch-case statement.
+Your program must get as inputs the operation, followed by two integers and print the result.
+You must support addition, subtraction, multiplication and division. Do not use keywords if and else.
+
+Sample Input :
+==============
+Enter the operation: +
+Enter two numbers 10 15
+
+Sample Output:
+==============
+Result = 25
+
+
+4. Write a Java program to find the smallest of three numbers using ternary operators.
+Do not use keywords if and else.
+
+5. Five Days of Summer:
+Your local store provides winners of a lucky draw with gifts on five days during their
+annual "Five Days of Summer Without Break" celebrations.
+The gift details are given below.
+
+Day 1: 1 Microphone
+Day 2: 2 Loudspeakers
+Day 3: 3 Keyboards
+Day 4: 4 Java Books
+Day 5: 5 iPhones
+
+The gifts are accumulative. The winner of any day gets the gift for the day
+and the gifts for all previous days during which a gift was given.
+
+ For example Day 3 winner gets:
+ 3 Keyboards
+ 2 Loudspeakers
+ 1 Microphone
+
+First listed is Day 3 gift (3 Keyboards), then gifts from previous days in order
+2 Loudspeakers (Day 2) and 1 Microphone (Day 1).
+
+Write a Java program to get a day (1 - 5) as input and print the gifts a
+winner on the day will win. While printing, list the gifts based on the
+descending order of days (as in Day 3 example above). Also ensure that you
+get valid a day number as input. Make sure your program uses switch case structure
+and the program source code is small.
+
+6. Good, Bad, Excellent:
+A number is a good number if it is a multiple of 2 or a multiple of both 3 and 5.
+A number is an excellent number if it is not a good number and it is a multiple of both 2 and 3 but not 5.
+A number is bad if it is neither good nor excellent.
+
+Write a Java class to get an integer as input and print whether it is good, bad or excellent.
+
+EC 1. Write the Weather color code program from Lab 3 without using keywords if or else.
+You can use switch structure.
