@@ -1,28 +1,40 @@
 1. Power palindrome (Reuse Extra credit from Lab 3 if you solved it)
+
 A number is a palindrome if the number reads the same on reversal. That is the 1st digit from
 left is equal to 1st digit from right; 2nd digit from left equals 2nd digit from right and so on.
+
 For any palindromic number, the ith digit from left has as its "corresponding digit" ith digit
 from right and vice-versa. For 4 digit numbers, 1st and 4th (both from left) are corresponding.
-2nd and 3rd are corresponding. A number is a power palindrome if a digit is equal to either the square
-or a square root of its corresponding digit. For example 2114 is a power palindrome.
+2nd and 3rd are corresponding. A number is a power palindrome if a digit is equal to either the
+square or a square root of its corresponding digit. 
+
+For example 2114 is a power palindrome.
 1st digit (2) is square root of 4th digit (4). 
 2nd digit (1) is square/ square root of 3rd digit (1). 
 3rd digit (1) is square/ square root of 2nd digit (1). 
 4th digit (4) is square of 1st digit (2). 
+
+2116 is not a power palindrome. Since 6 (fourth digit) is not the square of 2 (first digit).
+
 Write a Java class to input a 4 digit postive integer and check if it is a power palindrome. Make sure
 that user inputs only a four digit number. Hint: Checking if a digit is square of its corresponding
 digit is sufficient, square root test is taken care of by this indirectly.
-2. Divisibility test:-
-   Enter test number
-   Enter divisibility number.
-   Check if test number is divisible by divisibility number.
-   Use switch case, and write logic for divisibility (dont use mod operator). 
-   divisibility numbers will be from (2 and 5).
+
+2. Divisibility test
+
+	Testing divisiblity of a positive integer by certain numbers can be done without taking the modulo.
+There are nice little tricks for checking divisibility by 2 and 5. Write a Java program that does the
+following.
+   Get a positive number as input.
+   Get a divisor for checking divisibility ( 2 or 5).
+   Check if test number is divisible by the divisor.
+   Use switch case, and write logic for checking divisibility (do not use mod operator). 
 
 
 3. Write a Java class to implement a simple calculator using switch-case statement.
 Your program must get as inputs the operation, followed by two integers and print the result.
 You must support addition, subtraction, multiplication and division. Do not use keywords if and else.
+Use switch - case - break structure.
 
 Sample Input :
 ==============
@@ -72,5 +84,68 @@ A number is bad if it is neither good nor excellent.
 
 Write a Java class to get an integer as input and print whether it is good, bad or excellent.
 
+7. 2's complement operator:
+1's complement of a n-bit integer represented in binary is obtained by flipping 0's to 1 and 1's to 0 in
+the binary representation. 2's complement of a n-bit integer represented in binary is obtained by adding 1
+to the binary representation of 1's complement of the n-bit integer.
+
+1's complement (n) = flip bits in binary representation of n
+2's complement (n) = 1's complement (n) + 1
+
+In Java 1's complement is obtained by the complement operator ~. The below code snippet prints the 1's
+complement of a number.
+
+import java.util.Scanner;
+public class onescomplement {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+		System.out.print("Binary representaion of "+num+" is:");
+		System.out.println(Integer.toBinaryString(num));
+		int comp = ~num;
+		System.out.print("1's complement of "+num+" is:");
+		System.out.println(Integer.toBinaryString(comp));
+	}
+
+}
+
+Using the above code snippet write a new Java class to get an integer as input and print its 2's complement
+in both decimal and binary representation.
+
+8. 2's complement representation:
+2's complement operation gives the negative of an integer. It is different from 2's complement representation.
+2' complement representation is a way of representing both positive and negative numbers in binary without using the
+minus sign (-) in front of the number. 
+
+Let us consider a 4 bit type in Java called very_short, which is in 2's complement representation.
+Let d0, d1, d2 and d3 represent the bits (0 or 1) in a very_short number from left to right. The value of the number
+in decimal (base 10) is evaluated as follows.
+
+number = -d3 * 2^3 + d2 * 2^2 + d1 * 2^1 + d0 * 2^0
+
+Write a Java program to get a number in 2's complement representation (d3 d2 d1 d0) and print its value in decimal representaion. You can store d3, d2, d1 and d0 in integer type variables.
+
+Sample Input:
+-------------
+0 1 0 1
+
+Sample Output:
+--------------
+5
+
+Sample Input:
+-------------
+1 0 0 1
+
+Sample Output:
+--------------
+-7
+
+
+Extra Credit:
+=============
 EC 1. Write the Weather color code program from Lab 3 without using keywords if or else.
 You can use switch structure.
+
+EC 2. Extend Divisibility test program (Question 2) to test divisibility by 4, 8 and 10.
