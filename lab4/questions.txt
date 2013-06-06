@@ -1,0 +1,8 @@
+1) calculator using switch
+2) Write a Java program to find the smallest of three numbers using ternary operators.
+3) Divisibility test:-
+   Enter test number
+   Enter divisibility number.
+   Check if test number is divisible by divisibility number.
+   Use switch case, and write logic for divisibility (dont use mod operator). 
+   divisibility numbers will be from (2,3,4,5,6,8,9,11)
