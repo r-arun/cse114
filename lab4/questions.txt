@@ -124,7 +124,9 @@ in decimal (base 10) is evaluated as follows.
 
 number = -d3 * 2^3 + d2 * 2^2 + d1 * 2^1 + d0 * 2^0
 
-Write a Java program to get a number in 2's complement representation (d3 d2 d1 d0) and print its value in decimal representaion. You can store d3, d2, d1 and d0 in integer type variables.
+Write a Java program to get a number in 2's complement representation 
+(d3 d2 d1 d0) and print its value in decimal representaion. You can store
+d3, d2, d1 and d0 in integer type variables.
 
 Sample Input:
 -------------
