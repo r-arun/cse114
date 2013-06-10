@@ -286,3 +286,99 @@ In this case, user continued at all 10 prompts. So we exit after the 10th.
 Sample Case 3:
 Do you want to continue? N
 Sum of 0 numbers is 0.
+
+10. Warm up
+We can find the number of times a number is divisible by 2, by repeatedly 
+dividing the number as long we get a remainder 0 on division. For example,
+take 12,
+1. Dividing once, we get remainder 0 and quotient 6.
+2. Since remainder is 0, we divide the quotient again, we get quotient 3 and
+remainder 0.
+3. Since remainder is 0, we divide 3 again by 2. We not get remainder 1.
+We stop here. So 12 is divisible by 2, two times.
+
+Similarly 8 is divisible by 2, three times.
+
+Write a Java class to find the number of times an input integer is divisible
+by 2.
+
+Sample Input:
+Enter a positive integer: 12
+
+Sample Output:
+The number is divisible by 2, 2 times.
+
+Sample Input:
+Enter a positive integer: 13
+
+Sample Output:
+The number is divisible by 2, 0 times.
+
+Sample Input:
+Enter a positive integer: 16
+
+Sample Output:
+The number is divisible by 2, 4 times.
+
+Sample Input:
+Enter a positive integer: 36
+
+Sample Output:
+The number is divisible by 2, 2 times.
+
+
+Sample Solution:
+----------------
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+		int count = 0;
+		while(num > 0){
+			if(num % 2 == 0){
+				num/=2;
+				++count;
+			}
+			else{
+				break;
+			}
+		}
+		System.out.println("The number is divisible by 2 "+count+" times");
+	}
+
+11. Follow up:
+Write a Java program to find the number of times a number n, is divisible by
+all numbers from 2 to n. For example, take 36. We know that 36 is divisible
+by 2, two times. What remains is 9. 9 is divisible by 3 two times again.
+
+So we can write 36 as 2**2 * 3**2. (** indicates exponentiation). Use
+Math.pow(x,y) to compute x**y. Do not use x^y in Java, it means x 'xor' y.
+Anyway, for this question you need not find or calcuate x**y.
+
+Using the example above, write a Java class to find the number of times a
+number is divisible by all numbers from 2 to n. Print the solution in the
+below format, only if a number i divides n, at least one time. For each i,
+that divides n, k times write the output as i -> k as shown below.
+
+For example:
+Sample Input:
+-------------
+Enter the number: 100
+
+Sample Output:
+--------------
+2 -> 2
+5 -> 2
+
+Sample Input:
+-------------
+Enter the number: 31
+
+Sample Output:
+--------------
+31 -> 1
+
+12. Write a Java program to find if a given positive integer is prime.
+Get the integer as input from the console. Use your solution for 11 by
+observing the output of problem 11 for known prime numbers. Do you find a
+pattern?
