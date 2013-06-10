@@ -1,0 +1,288 @@
+1. Question:
+---------
+Write a Java program to print "Hello World!", 5 times on the console
+using a loop. The output should look like this.
+
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+
+Sample Program:
+---------------
+public class HelloWorldHelloWorld {
+
+	public static void main(String[] args) {
+		int cnt = 0;
+		while(cnt < 5){
+			System.out.println("Hello World!");
+			++cnt;
+			//cnt = cnt+1;
+			//cnt++;
+		}
+	}
+
+}
+
+2. Question: Warmup
+------------
+Write a Java program to get a word and the number of times to print it.
+Print each line with a line number before it.
+
+Sample Input:
+-------------
+Enter the word: Hello
+Enter number of times to print: 5
+
+Sample Output:
+--------------
+1: Hello
+2: Hello
+3: Hello
+4: Hello
+5: Hello
+
+Sample Program:
+---------------
+public class HelloWorldLine {
+
+	/**
+	 * Warmup 2
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		String text = input.next();
+		int cnt = input.nextInt();
+		int i = 1;
+		while(i <= cnt){
+			System.out.println(i+":"+text);
+			++i;
+		}
+	}
+}
+
+3. Question: Follow up
+Modify the above program to print the line numbers from 0 to cnt-1 instead
+of 1 to cnt.
+
+Sample Input:
+-------------
+Enter the word: Hello
+Enter number of times to print: 5
+
+Sample Output:
+--------------
+0: Hello
+1: Hello
+2: Hello
+3: Hello
+4: Hello
+
+4. Question: Warm up
+Write a Java program to get several numbers as input and print if a number
+is even or odd. First get t, the number of test cases. For each case get a
+number n and print whether n is even or odd.
+
+Sample Input:
+Enter the number of test cases: 5
+10
+11
+12
+13
+14
+Sample Output:
+10 is even
+11 is odd
+12 is even
+13 is odd
+14 is even
+
+Sample Program:
+public class InputNumbers {
+
+	//Warm Up
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the number of test cases");
+		int t = input.nextInt();
+		while(t > 0){
+			System.out.println("Enter an integer to check for even/odd");
+			int num = input.nextInt();
+			if(num % 2 == 0)
+				System.out.println(num+" is even");
+			else
+				System.out.println(num+" is odd");
+			--t;
+		}
+	}
+
+}
+
+5. Question:
+------------
+Write a Java program to print two strings "Hello Earh" and "Hello Mars" on
+alternate lines, with line numbers starting from 0.
+
+How to get inputs?
+Get the total number of lines to get printed, num
+
+How to output?
+Print line numbers from 0 to num-1, with the corresponding string.
+
+Sample Input:
+Enter number of times to print: 5
+
+Sample Output:
+0: Hello Earth
+1: Hello Mars
+2: Hello Earth
+3: Hello Mars
+4: Hello Earth
+
+6. Question:
+Write a Java program to get n integers as input from the program and print
+the count of positive and negative integers after getting all n integers as
+input. 
+
+How to get input?
+-First get the number of test cases n
+-Then read n integers from the console.
+
+Sample Input:
+-------------
+Enter Number of test cases: 5
+4
+10
+-10
+0
+20
+
+Sample Output:
+--------------
+Number of Positive Integers = 3
+Number of Negative Integers = 1
+
+Warm up:
+Sum of n numbers. Write a java program to get a number n and print the sum
+of all whole numbers from 1 to n.
+
+Sample Input:
+-------------
+Enter the value of n: 10
+
+Sample Output:
+--------------
+Sum of first n whole numbers is 55.
+
+Sample Program:
+---------------
+import java.util.Scanner;
+public class SumOfNumbers {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		int sum = 0;
+		int i = 1;
+		while(i <= n){
+			sum = sum + i;
+			++i;
+		}
+		System.out.println("Sum of first "+n+" natural numbers is "+sum);
+	}
+
+}
+
+7. Follow up:
+----------
+Write a Java program to get n numbers from input and find their sum. First
+get the number of test cases n. Then get n integers as input from user and
+print the sum of n numbers.
+
+Sample Input:
+-------------
+Enter number of numbers: 5
+10
+2
+3
+5
+-5
+
+Sample Output:
+--------------
+Sum of 5 numbers is 15.
+
+8.
+Question:
+---------
+factorial (n) is defined as the product of all integers from 1 to n.
+factorial (5) = 5 * 4 * 3 * 2 * 1 = 120.
+We also define factorial (0) to be 1.
+
+Write a Java program to get a number between 0 to 15 and print the factorial
+of that number.
+
+Sample Input:
+-------------
+Enter a number between 0 to 15: 5
+
+Sample Output:
+Factorial of 5 = 120.
+
+9. Question:
+------------
+When you install software from command line, you may to select whether to
+continue to next step or abort. The installer itself will terminate after
+a finite number of steps. The user must enter 'Y' to continue at a question,
+(called prompt, like "Do you want to continue?"). Anything other than 'Y', 
+causes the program to end.
+
+We will write a Java program to get up to 10 numbers as input from the
+program and find the sum of the numbers. At each step ask if the user wants 
+to continue to next input (user inputs 'Y') or terminate (other than Y).
+If the user enters 'Y' during all 10 prompts, exit the program after the 
+10 th prompt.
+
+After the prompt exists print the sum of all numbers. If the user existed at
+first step itself, print 0 as the sum.
+
+The sample cases are listed below. Use do while loop structure.
+
+Sample Case 1:
+Do you want to continue? Y
+Enter an integer: 10
+Do you want to continue? Y
+Enter an integer: 15
+Do you want to continue? N
+Sum of 2 numbers is 25
+
+Sample Case 2:
+Do you want to continue? Y
+Enter an integer: 1
+Do you want to continue? Y
+Enter an integer: 2
+Do you want to continue? Y
+Enter an integer: 3
+Do you want to continue? Y
+Enter an integer: 4
+Do you want to continue? Y
+Enter an integer: 5
+Do you want to continue? Y
+Enter an integer: 6
+Do you want to continue? Y
+Enter an integer: 7
+Do you want to continue? Y
+Enter an integer: 8
+Do you want to continue? Y
+Enter an integer: 9
+Do you want to continue? Y
+Enter an integer: 10
+Sum of 10 numbers is 55
+
+In this case, user continued at all 10 prompts. So we exit after the 10th.
+
+Sample Case 3:
+Do you want to continue? N
+Sum of 0 numbers is 0.
