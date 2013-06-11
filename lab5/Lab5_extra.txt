@@ -1,0 +1,33 @@
+1) Write a Java class to print the following pattern for entered String:-
+
+Sample Output:-
+----------------
+Enter String :- abccba
+a	a	// 1st letter and last letter
+b	b	// 2nd letter and 2nd last letter
+c	c	// 3rd letter and 3rd last letter
+
+If it is odd length input:-
+Sample Output:-
+----------------
+Enter String :- abcba
+a	a	// 1st letter and last letter
+b	b	// 2nd letter and 2nd last letter
+c		// 3rd letter 
+
+2) Extend the above program to check if its a Even or Odd palindrome string
+
+Sample Output:-
+----------------
+Enter String :- abccba
+The Entered String is Even Palindrome
+
+Sample Output:-
+----------------
+Enter String :- abcba
+The Entered String is Odd Palindrome
+
+Sample Output:-
+----------------
+Enter String :- abcccc
+The Entered String is Not a Palindrome
