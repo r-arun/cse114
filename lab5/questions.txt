@@ -25,11 +25,13 @@ public class HelloWorldLine {
 	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the word:");
 		String text = input.next();
+		System.out.println("Enter number of times to print:");
 		int cnt = input.nextInt();
 		int i = 1;
 		while(i <= cnt){
-			System.out.println(i+":"+text);
+			System.out.println(i+": "+text);
 			++i;
 		}
 	}
@@ -64,6 +66,7 @@ Enter the number of test cases: 5
 12
 13
 14
+
 Sample Output:
 10 is even
 11 is odd
@@ -95,7 +98,7 @@ public class InputNumbers {
 
 4. Question:
 ------------
-Write a Java program to print two strings "Hello Earh" and "Hello Mars" on
+Write a Java program to print two strings "Hello Earth" and "Hello Mars" on
 alternate lines, with line numbers starting from 0.
 
 How to get inputs?
@@ -155,6 +158,7 @@ import java.util.Scanner;
 public class SumOfNumbers {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the value of n");
 		int n = input.nextInt();
 		int sum = 0;
 		int i = 1;
@@ -168,14 +172,14 @@ public class SumOfNumbers {
 }
 
 7. Follow up:
-----------
-Write a Java program to get n numbers from input and find their sum. First
+-------------
+Write a Java program to get n integers from input and find their sum. First
 get the number of test cases n. Then get n integers as input from user and
-print the sum of n numbers.
+print the sum of those integers.
 
 Sample Input:
 -------------
-Enter number of numbers: 5
+Enter number of inputs: 5
 10
 2
 3
@@ -186,9 +190,8 @@ Sample Output:
 --------------
 Sum of 5 numbers is 15.
 
-8.
-Question:
----------
+8.  Question:
+-------------
 factorial (n) is defined as the product of all integers from 1 to n.
 factorial (5) = 5 * 4 * 3 * 2 * 1 = 120.
 We also define factorial (0) to be 1.
@@ -201,13 +204,14 @@ Sample Input:
 Enter a number between 0 to 15: 5
 
 Sample Output:
+--------------
 Factorial of 5 = 120.
 
 9. Question:
 ------------
 When you install software from command line, you may to select whether to
 continue to next step or abort. The installer itself will terminate after
-a finite number of steps. The user must enter 'Y' to continue at a question,
+a finite number of steps. The user must enter 'Y' to continue after a question,
 (called prompt, like "Do you want to continue?"). Anything other than 'Y', 
 causes the program to end.
 
@@ -217,12 +221,13 @@ to continue to next input (user inputs 'Y') or terminate (other than Y).
 If the user enters 'Y' during all 10 prompts, exit the program after the 
 10 th prompt.
 
-After the prompt exists print the sum of all numbers. If the user existed at
+After the prompt exits print the sum of all numbers. If the user exited at
 first step itself, print 0 as the sum.
 
 The sample cases are listed below. Use do while loop structure.
 
 Sample Case 1:
+--------------
 Do you want to continue? Y
 Enter an integer: 10
 Do you want to continue? Y
@@ -231,6 +236,7 @@ Do you want to continue? N
 Sum of 2 numbers is 25
 
 Sample Case 2:
+--------------
 Do you want to continue? Y
 Enter an integer: 1
 Do you want to continue? Y
@@ -256,47 +262,56 @@ Sum of 10 numbers is 55
 In this case, user continued at all 10 prompts. So we exit after the 10th.
 
 Sample Case 3:
+--------------
 Do you want to continue? N
 Sum of 0 numbers is 0.
 
 10. Warm up
 -----------
 We can find the number of times a number is divisible by 2, by repeatedly 
-dividing the number as long we get a remainder 0 on division. For example,
+dividing the number, as long we get a remainder 0 on division. For example,
 take 12,
 1. Dividing once, we get remainder 0 and quotient 6.
-2. Since remainder is 0, we divide the quotient again, we get quotient 3 and
+2. Since remainder is 0, we divide the quotient 6 again, we get quotient 3 and
 remainder 0.
-3. Since remainder is 0, we divide 3 again by 2. We not get remainder 1.
+3. Since remainder is 0, we divide 3 again by 2. We get remainder 1, not 0.
 We stop here. So 12 is divisible by 2, two times.
 
-Similarly 8 is divisible by 2, three times.
+Similarly 8 is divisible by 2, three times until we reach quotient 1.
 
 Write a Java class to find the number of times an input integer is divisible
 by 2.
 
 Sample Input:
+--------------
 Enter a positive integer: 12
 
 Sample Output:
+--------------
 The number is divisible by 2, 2 times.
 
 Sample Input:
+--------------
 Enter a positive integer: 13
 
 Sample Output:
+--------------
 The number is divisible by 2, 0 times.
 
 Sample Input:
+--------------
 Enter a positive integer: 16
 
 Sample Output:
+--------------
 The number is divisible by 2, 4 times.
 
 Sample Input:
+--------------
 Enter a positive integer: 36
 
 Sample Output:
+--------------
 The number is divisible by 2, 2 times.
 
 
@@ -322,19 +337,19 @@ public static void main(String[] args) {
 11. Follow up:
 --------------
 Write a Java program to find the number of times a number n, is divisible by
-all numbers from 2 to n. For example, take 36. We know that 36 is divisible
-by 2, two times. What remains is 9. 9 is divisible by 3 two times again.
+all numbers from 2 to n.
 
-So we can write 36 as 2**2 * 3**2. (** indicates exponentiation). Use
-Math.pow(x,y) to compute x**y. Do not use x^y in Java, it means x 'xor' y.
-Anyway, for this question you need not find or calcuate x**y.
+For example, take 36. We know that 36 is divisible by 2, two times. What remains
+is 9. 9 is not divisible by 2, so try the next number 3, 9 is divisible by 3 two
+times again. We are left with 1, which is not divisible by any number from 3 to 36.
+So we can write 36 as 2**2 * 3**2. (** indicates exponentiation).
 
 Using the example above, write a Java class to find the number of times a
 number is divisible by all numbers from 2 to n. Print the solution in the
 below format, only if a number i divides n, at least one time. For each i,
-that divides n, k times write the output as i -> k as shown below.
+that divides n, k times, write the output as i -> k as shown below. (Look
+at the sample cases for the format).
 
-For example:
 Sample Input:
 -------------
 Enter the number: 100
@@ -343,6 +358,9 @@ Sample Output:
 --------------
 2 -> 2
 5 -> 2
+
+2 divides 100, twice leaving 25. 3 and 4 do not divide 25.
+5 divides 25 twice leaving 1.
 
 Sample Input:
 -------------
@@ -353,6 +371,6 @@ Sample Output:
 31 -> 1
 
 12. Write a Java program to find if a given positive integer is prime.
-Get the integer as input from the console. Use your solution for 11 by
-observing the output of problem 11 for known prime numbers. Do you find a
-pattern?
+Get the integer as input from the console.  You can code the same solution
+as used in the lecture. For bonus, use your solution for Problem 11 by
+observing the outputs for known prime numbers. Do you find a pattern?
