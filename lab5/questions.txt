@@ -1,31 +1,4 @@
-1. Question:
----------
-Write a Java program to print "Hello World!", 5 times on the console
-using a loop. The output should look like this.
-
-Hello World!
-Hello World!
-Hello World!
-Hello World!
-Hello World!
-
-Sample Program:
----------------
-public class HelloWorldHelloWorld {
-
-	public static void main(String[] args) {
-		int cnt = 0;
-		while(cnt < 5){
-			System.out.println("Hello World!");
-			++cnt;
-			//cnt = cnt+1;
-			//cnt++;
-		}
-	}
-
-}
-
-2. Question: Warmup
+1. Question: Warmup
 ------------
 Write a Java program to get a word and the number of times to print it.
 Print each line with a line number before it.
@@ -51,7 +24,6 @@ public class HelloWorldLine {
 	 * Warmup 2
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		String text = input.next();
 		int cnt = input.nextInt();
@@ -63,7 +35,7 @@ public class HelloWorldLine {
 	}
 }
 
-3. Question: Follow up
+2. Question: Follow up
 Modify the above program to print the line numbers from 0 to cnt-1 instead
 of 1 to cnt.
 
@@ -80,7 +52,7 @@ Sample Output:
 3: Hello
 4: Hello
 
-4. Question: Warm up
+3. Question: Warm up
 Write a Java program to get several numbers as input and print if a number
 is even or odd. First get t, the number of test cases. For each case get a
 number n and print whether n is even or odd.
@@ -121,7 +93,7 @@ public class InputNumbers {
 
 }
 
-5. Question:
+4. Question:
 ------------
 Write a Java program to print two strings "Hello Earh" and "Hello Mars" on
 alternate lines, with line numbers starting from 0.
@@ -142,7 +114,7 @@ Sample Output:
 3: Hello Mars
 4: Hello Earth
 
-6. Question:
+5. Question:
 Write a Java program to get n integers as input from the program and print
 the count of positive and negative integers after getting all n integers as
 input. 
@@ -165,7 +137,7 @@ Sample Output:
 Number of Positive Integers = 3
 Number of Negative Integers = 1
 
-Warm up:
+6. Warm up:
 Sum of n numbers. Write a java program to get a number n and print the sum
 of all whole numbers from 1 to n.
 
@@ -288,6 +260,7 @@ Do you want to continue? N
 Sum of 0 numbers is 0.
 
 10. Warm up
+-----------
 We can find the number of times a number is divisible by 2, by repeatedly 
 dividing the number as long we get a remainder 0 on division. For example,
 take 12,
@@ -347,6 +320,7 @@ public static void main(String[] args) {
 	}
 
 11. Follow up:
+--------------
 Write a Java program to find the number of times a number n, is divisible by
 all numbers from 2 to n. For example, take 36. We know that 36 is divisible
 by 2, two times. What remains is 9. 9 is divisible by 3 two times again.
