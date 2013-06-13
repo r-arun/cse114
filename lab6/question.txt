@@ -1,0 +1,95 @@
+*Warm Up: String position
+Take a string as input. And position in the string. Print the character at
+that position.
+
+*Question: Even Vowel
+A string is an Even Vowel if all characters in even position (0, 2, 4, ...) are vowels (one of a, e, i, o, u). Write a Java program to get a String with
+lower case alphabets as input and print whether it is an Even Vowel or not.
+Note that the first character in a String is at position 0. 
+
+Sample Input:
+america
+Sample Output:
+Yes
+
+Sample Input:
+europe
+Sample Output:
+No
+
+Sample Input:
+e
+Sample Output:
+Yes
+
+*Question: String Palindrome
+Write a java program to determine if an input string is a palindrome or not.
+
+Sample Input:
+madam
+Sample Output:
+Yes
+
+Sample Input:
+baba
+Sample Output:
+No
+
+Sample Input:
+e
+Sample Output:
+Yes
+
+
+*Question: Simple Function
+Write a Java function to take a String s, an integer n as inputs and print
+the string s, repeatedly in n lines. Get the string and integer from command
+line as inputs.
+
+Sample Input:
+Hello
+5
+
+Sample Output:
+Hello
+Hello
+Hello
+Hello
+Hello
+
+*Follow up:
+Modify the function to take a boolean variable. If the variable is true,
+print line numbers from 1 to n. Else print from 0 to n-1.
+
+*Question: Pyramids
+Write a Java program to take an odd number n as input and print triangle in
+a pyramidal pattern in the next m = n/2 + 1 lines. In this pattern the ith
+line contains (m-i)/2 spaces followed by 2*i-1 stars.
+
+Sample Input:
+5
+
+Sample Output:
+  *
+ *** 
+*****
+
+*Warm Up: Square function
+Define a function sqaure to take an integer as a parameter and return the
+square of the number.
+
+*Question: Nested Functions
+Define a function sum_of_squares that takes an n, integer as input and finds
+the sum of squares of numbers from 1 to n. Use square function written in
+the previous program to compute the square of a number.
+
+*Question: Binary to Integer
+Write a Java program to get a String representing a binary number as input.
+Write a Java function to convert this String to the corresponding decimal
+number. The method must take a String variable as a parameter and return an
+int.
+
+Sample Input:
+1001
+Sample Output:
+9
