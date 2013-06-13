@@ -1,107 +1,317 @@
-*Warm Up: String position
-Take a string as input. And position in the string. Print the character at
-that position.
+1 Warm Up: String position
+--------------------------
+The String class provides charAt method, which takes an int 'i', and
+provides the character at position 'i' at the string. The leftmost character
+is at position 0. You can get the entire length of string from the method
+lenght() of the String class.
 
-*Question: Even Vowel
-A string is an Even Vowel if all characters in even position (0, 2, 4, ...) are vowels (one of a, e, i, o, u). Write a Java program to get a String with
-lower case alphabets as input and print whether it is an Even Vowel or not.
+Write a Java program to,
+
+Take a string 's', as input.
+Get an integer 'i'.
+
+Print ith character from the left and ith character from the right. The 0th
+character from right is the rightmost character in the string.
+
+Input:
+------
+Enter a string: foobar
+Enter the character position: 0
+
+Output:
+-------
+Character at position 0 from left: f
+Character at position 0 from right: r
+
+Input:
+------
+Enter a string: foobar
+Enter the character position: 2
+
+Output:
+-------
+Character at position 0 from left - o
+Character at position 0 from right - b
+
+Sample Program:
+---------------
+import java.util.Scanner;
+
+public class StringPosition {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a string:");
+		String s = input.next();
+		System.out.println("Enter the character position:");
+		int pos = input.nextInt();
+		int length = s.length();
+		char left = s.charAt(pos);
+		//right most character is at length - 1 position
+		char right = s.charAt(length - 1 - pos);
+		System.out.print("Character at position 0 from left: ");
+		System.out.println(left);
+		System.out.print("Character at position 0 from right: ");
+		System.out.println(right);
+	}
+
+}
+
+2 Question: Even Vowel String
+-----------------------------
+A string is an Even Vowel String if all characters in even positions (0, 2,
+4 , ...) are vowels (one of a, e, i, o, u). Write a Java program to get a
+String with lower case alphabets as input and print whether it is an Even
+Vowel String or not.
+
 Note that the first character in a String is at position 0. 
 
 Sample Input:
+--------------
 america
+
 Sample Output:
+--------------
 Yes
 
 Sample Input:
+--------------
 europe
+
 Sample Output:
+--------------
 No
 
 Sample Input:
+--------------
 e
+
 Sample Output:
+--------------
 Yes
 
-*Question: String Palindrome
+3 Question: String Palindrome
+-----------------------------
 Write a java program to determine if an input string is a palindrome or not.
+A string is a palindrome if the reverse of the string reads the same as
+the string itself. It has a property that every ith character from left is
+equal to  ith character from right in the string, for values of i from 0 to 
+l-1, where l is the length of the string.
 
 Sample Input:
+-------------
 madam
+
 Sample Output:
+-------------
 Yes
 
 Sample Input:
+-------------
 baba
+
 Sample Output:
+-------------
 No
 
 Sample Input:
+--------------
 e
+
 Sample Output:
+--------------
 Yes
 
-*Warmup: Write a function that takes an integer n as input and prints "Hello
-World" n times.
-
-*Question: Simple Function
-Write a Java function to take a String s, an integer n as inputs and print
-the string s, repeatedly in n lines. Get the string and integer from command
-line as inputs.
+4 Warmup:
+---------
+Write a function that takes an integer 'n' as a paramter and prints "Hello
+World", 'n' times, each in a new line.
 
 Sample Input:
+-------------
+Enter number of times to repeat: 3
+
+Sample Output:
+--------------
+Hello World
+Hello World
+Hello World
+
+Sample Program:
+---------------
+import java.util.Scanner;
+
+public class funcWarmup {
+	public static void repeater(int n){
+		String str = "Hello World";
+		for(int i = 0; i < n; ++i)
+			System.out.println(str);
+	}
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter number of times to repeat: ");
+		int n = input.nextInt();
+		repeater(n);
+	}
+
+}
+
+5 Question: Simple Function
+---------------------------
+Write a Java function to take a String s, an integer n as parameters and 
+print the string s, repeatedly in n lines. Get the string and integer from 
+console as inputs.
+
+Sample Input:
+--------------
 Hello
 5
 
 Sample Output:
+--------------
 Hello
 Hello
 Hello
 Hello
 Hello
 
-*Follow up:
-Modify the function to take a boolean variable. If the variable is true,
-print line numbers from 1 to n. Else print from 0 to n-1.
+6 Follow up:
+------------
+Modify the function to take an additional boolean variable. If the variable
+is true, print line numbers from 1 to n. Else print from 0 to n-1.
 
-*Question: Pyramids
-Write a Java program to take an odd number n as input and print triangle in
-a pyramidal pattern in the next m = n/2 + 1 lines. In this pattern the ith
-line contains (m-i)/2 spaces followed by 2*i-1 stars.
+You can get a boolean value from input using nextBoolean method of Scanner
+class.  The input value is either "true" or "false" (without quotes). Get
+this boolean value and pass it to your function.
 
 Sample Input:
+-------------
+Hello
 5
+true
 
 Sample Output:
-  *
- *** 
-*****
+--------------
+1. Hello
+2. Hello
+3. Hello
+4. Hello
+5. Hello
 
-*Warm Up: Square function
-Define a function sqaure to take an integer as a parameter and return the
-square of the number.
+Sample Input:
+-------------
+Hello
+5
+false
 
-*Question: Nested Functions
-Define a function sum_of_squares that takes an n, integer as input and finds
-the sum of squares of numbers from 1 to n. Use square function written in
-the previous program to compute the square of a number.
+Sample Output:
+--------------
+0. Hello
+1. Hello
+2. Hello
+3. Hello
+4. Hello
 
-*Question: Binary to Integer
+7 Warm Up: Square function
+--------------------------
+Define a method square to take an integer as a parameter and return the
+square of the number. The method must return an integer.
+
+Sample Input:
+-------------
+Enter an integer as input: 5
+
+Sample Output:
+--------------
+Square of 5 = 25
+
+Sample Program:
+---------------
+import java.util.Scanner;
+
+public class Square {
+
+	public static int square(int n){
+		int ret = n * n;
+		return ret;
+	}
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter an integer as input:");
+		int n = input.nextInt();
+		int result = square(n);
+		System.out.println("Square of "+ n + " = "+result);
+	}
+
+}
+
+8 Question: Sum of squares
+--------------------------
+Define a method sum_of_squares that takes an integer n, as input and finds
+the sum of squares of whole numbers from 1 to n. Use square function 
+written in the previous program to compute the square of a number.
+
+Sample Input:
+-------------
+Enter n: 5
+
+Sample Output:
+--------------
+Sum of square of first 5 whole numbers is 55
+
+9 Question: Binary to Integer
+-----------------------------
 Write a Java program to get a String representing a binary number as input.
-Write a Java function to convert this String to the corresponding decimal
+Define a Java method to convert this String to the corresponding decimal
 number. The method must take a String variable as a parameter and return an
-int.
+int. You can use charAt method of String class and any of the conditional
+expressions.
 
 Sample Input:
+--------------
 1001
+
 Sample Output:
+--------------
 9
 
-*Question: Sum of digits of an integer
+10 Question: Sum of digits of an integer
+-----------------------------------------
 Write a Java function that takes an integer as a parameter and finds the sum
 of all digits in that number.
 
 Sample Input:
+--------------
 872
+
 Sample Output:
+--------------
 17
+
+Explanation:
+------------
+8 + 7 + 2 = 17
+
+11 Question: Pyramids
+---------------------
+Write a Java program to take an odd number n as input and print triangle in
+a pyramidal pattern in the next m line, where m = n/2 + 1. In this pattern 
+the ith line contains (m-i) spaces on either side of (2*i-1) stars.
+
+Note: m = floor(n/2) + 1. But in Java due to int divison we get only the
+floor value of the quotient. So n/2 + 1 will suffice.
+
+Sample Input:
+-------------
+5
+
+Sample Output:
+--------------
+  *
+ *** 
+*****
+
+Hint:
+-----
+Think about the bottom most line first.
+Look at solutions for extra 1 and extra 2 from Lab 5.
 
