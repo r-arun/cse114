@@ -263,16 +263,36 @@ Sum of square of first 5 whole numbers is 55
 Write a Java program to get a String representing a binary number as input.
 Define a Java method to convert this String to the corresponding decimal
 number. The method must take a String variable as a parameter and return an
-int. You can use charAt method of String class and any of the conditional
-expressions.
+int. 
+
+You can use charAt method of String class and any of the conditional
+expressions to obtain a bit's value (0 or 1) as shown in the code snippet.
+
+*****************************
+	int bit = 0;
+	if(s.charAt(i) == '0')
+		bit = 0;
+	else
+		bit = 1;
+*****************************
+
+The rule for conversion from binary to decimal is given below,
+
+Decimal =  2**(n-1) * bn + 2**(n-2) * bn-1 +...+ 2**1 * b1 + 2**0 * b0
+
+For example if method takes as input "1010", b0 = 1, b1 = 0, b2 = 0, b3=1.
+Thus decimal value is 2**3 * b3+ 2**2 * b2 + 2**1* b1+ 2**0 * b0 = 
+8*1 + 4*0 + 2*1 + 1*0 = 10.
+
+Use "(int) Math.pow(2, x)" to get 2**x.
 
 Sample Input:
 --------------
-1001
+1010
 
 Sample Output:
 --------------
-9
+10
 
 10 Question: Sum of digits of an integer
 -----------------------------------------
