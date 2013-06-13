@@ -123,7 +123,7 @@ Yes
 
 4 Warmup:
 ---------
-Write a function that takes an integer 'n' as a paramter and prints "Hello
+Write a method that takes an integer 'n' as a paramter and prints "Hello
 World", 'n' times, each in a new line.
 
 Sample Input:
@@ -155,9 +155,9 @@ public class funcWarmup {
 
 }
 
-5 Question: Simple Function
+5 Question: Simple Method
 ---------------------------
-Write a Java function to take a String s, an integer n as parameters and 
+Write a Java method to take a String s, an integer n as parameters and 
 print the string s, repeatedly in n lines. Get the string and integer from 
 console as inputs.
 
@@ -176,12 +176,12 @@ Hello
 
 6 Follow up:
 ------------
-Modify the function to take an additional boolean variable. If the variable
+Modify the method to take an additional boolean variable. If the variable
 is true, print line numbers from 1 to n. Else print from 0 to n-1.
 
 You can get a boolean value from input using nextBoolean method of Scanner
 class.  The input value is either "true" or "false" (without quotes). Get
-this boolean value and pass it to your function.
+this boolean value and pass it to your method.
 
 Sample Input:
 -------------
@@ -211,7 +211,7 @@ Sample Output:
 3. Hello
 4. Hello
 
-7 Warm Up: Square function
+7 Warm Up: Square method
 --------------------------
 Define a method square to take an integer as a parameter and return the
 square of the number. The method must return an integer.
@@ -247,7 +247,7 @@ public class Square {
 8 Question: Sum of squares
 --------------------------
 Define a method sum_of_squares that takes an integer n, as input and finds
-the sum of squares of whole numbers from 1 to n. Use square function 
+the sum of squares of whole numbers from 1 to n. Use square method 
 written in the previous program to compute the square of a number.
 
 Sample Input:
@@ -276,7 +276,7 @@ Sample Output:
 
 10 Question: Sum of digits of an integer
 -----------------------------------------
-Write a Java function that takes an integer as a parameter and finds the sum
+Write a Java method that takes an integer as a parameter and finds the sum
 of all digits in that number.
 
 Sample Input:
