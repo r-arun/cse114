@@ -40,6 +40,8 @@ e
 Sample Output:
 Yes
 
+*Warmup: Write a function that takes an integer n as input and prints "Hello
+World" n times.
 
 *Question: Simple Function
 Write a Java function to take a String s, an integer n as inputs and print
@@ -93,3 +95,13 @@ Sample Input:
 1001
 Sample Output:
 9
+
+*Question: Sum of digits of an integer
+Write a Java function that takes an integer as a parameter and finds the sum
+of all digits in that number.
+
+Sample Input:
+872
+Sample Output:
+17
+
