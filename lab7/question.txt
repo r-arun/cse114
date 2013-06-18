@@ -1,0 +1,408 @@
+1. Random Number [ 5 points]
+Write a Java method random to return a positive integer from 1 to n.
+Note that Math.random(), returns a double x, such that 0.0 <= x < 1.0.
+
+The below code also uses, asserts. An assert is like the if expression,
+except that if condition fails, the program throws an exception.  Here,
+it helps you check if the result is actually less than or equal to n.
+
+You can turn on asserts as follow:
+Go to Run -> Run Configurations. Go to Arguments tab and in VM arguments
+give "-ea" (without quotes).
+
+	import java.util.Scanner;
+	public class RandomNumbers {
+		public static int random(int n){
+			//your code
+		}
+		public static void main(String[] args) {
+			Scanner input = new Scanner(System.in);
+			int num = input.nextInt();
+			int result = random(num);
+			assert result <= num;
+			System.out.println(result);
+		}
+
+	}
+
+2. (a) Array Basics 1 [ 5 + 5 = 10 points]
+Replace //What happens? next to whatis calls, with what actually happens. If the
+expression is valid and correct tell the results of execution of the statement.
+Or give the error or exception that will take place. While submitting code, just
+replace the comments with what will happen. You *need not* debug this code snippet.
+
+Sample Code:
+------------
+public class ArrayWarmup {
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int arr[];
+		arr = new int[6];
+		arr[0] = 1; arr[1] = 2; arr[2] = 3; arr[3] = 4; arr[4] = 5; arr[5] = 6;
+		whatis(arr[0]); // Gives 1
+		whatis(arr.length); // Length of arr is 6
+		whatis(arr[arr.length-1]); //Gives 6
+		whatis(arr[arr.length]); // Some thing bad happens: What is that exactly?
+		whatis(arr[-1]); //What happens?
+		whatis(arr[2.0]); //What happens?
+		whatis(arr[(int) 2.0]); //What happens?
+		System.out.println(arr); //What happens?
+		System.out.println(arr[i]); //What happens?
+		
+		double d_arr[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0}; // Assignment is successful
+		whatis(d_arr[0]); //What happens?
+		whatis(d_arr[1]); //What happens?
+		whatis(d_arr[d_arr.length-6]); //What happens?
+		whatis(d_arr[2.0]); //What happens?
+		whatis(d_arr[(int) 2.0*2.0]); //What happens?
+		System.out.println(d_arr[i]); //What happens?
+		
+		int c_arr[] = new int[6]; //What happens?
+		whatis(c_arr[0]); //What happens?
+		whatis(c_arr[-1]); //What happens?
+		whatis(c_arr[4]); //What happens?
+
+		int z_arr[] = new int[0]; //What happens?
+		whatis(z_arr[0]); //What happens?
+		whatis(z_arr[-1]); //What happens?
+		whatis(z_arr[4]); //What happens?
+
+	}
+
+}
+
+2(b) The method printArray tries to print all elements of an integer array
+separated by a space character. But the code has some bugs. Correct the bugs.
+The debuged code must work correctly for the method call printArray in main().
+
+The expected output is:
+-1 2 3 -4 5 6 7
+
+public class PrintArray {
+
+	public static void printArray(int arr[]){
+		for(int i = -3; i <= arr.length; ++i)
+			System.out.println(arr[i]+" ");
+		System.out.println();
+	}	
+	
+	public static void main(String[] args) {
+		int arr[]= {-1, 2, 3, -4 ,5 , 6, 7};
+		printArray(arr);
+	}
+
+}
+
+3. Method overloading: [5 points]
+---------------------------------
+The code snippet below demonstrates method overloading in Java.
+The main method calls method self, but passes it different parameters.
+The return types also differ. The first two methods return the
+value of input parameter. The third does not take any parameter but
+simply prints the string "self". Note that all methods have the same
+parameter types and return types. This need not be the case always.
+
+Your task is to write overloaded methods all named - convert.
+- The first method should take an integer and return a double corresponding
+to the integer. For example, passing 5 must return 5.0.
+- The second method should take a double and return its integer value. For
+example, the method should take 3.142 and return 3.
+Use the code snippet for writing and testing your code.
+
+	public class MethodOverloading {
+		public static int self(int a){
+			return a;
+		}
+
+		public static double self(double a){
+			return a;
+		}
+
+		public static void self(){
+			System.out.println("self");
+		}
+
+		//Write your method convert for int to double
+
+		//Write your method convert for double to int
+
+		public static void main(String[] args) {
+			self();
+			int a = self(10);
+			double b = self(3.142);
+			System.out.println(a);
+			System.out.println(b);
+			double c = convert(10);
+			double d = convert(3.142);
+			System.out.println(c);
+			System.out.println(d);
+		}
+
+	}
+	
+4. Average of ints, average of doubles [10 points]
+--------------------------------------------------
+Write two overloaded methods with the name average. The first takes an 
+integer array as parameter, and returns the average (double). The second
+takes a double array as parameter and returns the average (double, again).
+Refer to print_array for the example of a function that takes an array as
+a parameter. (main is also one).
+
+Use the sample code below to write and test your code.
+
+public class Averages {
+
+	 //Your average methods here.
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter the size of int array:");
+		int t1 = input.nextInt();
+		int arr[] = new int[t1];
+		System.out.println("Enter "+t1+" elements of int array");
+
+		for(int i = 0; i < t1; ++i)
+			arr[i] = input.nextInt();
+
+		System.out.println("Enter the size of double array:");
+		int t2 = input.nextInt();
+		double darr[] = new double[t2]; 
+		System.out.println("Enter "+t2+" elements of double array");
+
+		for(int i = 0; i < t2; ++i)
+			darr[i] = input.nextDouble();
+
+		double i_average = average(arr);
+		double d_average = average(darr);
+		System.out.println("Average of integer array: "+ i_average);
+		System.out.println("Average of double array: "+ d_average);
+	}
+
+}
+
+5. Construct Array [10 points]
+------------------------------
+Write a Java method constructArray, that takes an integer n,as parameter and 
+returns an integer array of size n consisting of all numbers from 1 to n.
+
+Follow the method signature:
+	public static int[] constructArray(int n)
+
+The int[] after static defines the return type as an integer array.
+
+Use the sample code below to write and test your code.
+
+import java.util.Scanner;
+
+public class ConstructArray {
+
+	public static int [] constructArray(int n){
+		//Code for construct array
+	}
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int a = input.nextInt();
+		int [] arr = constructArray(a);
+	}
+
+}
+
+6. Search [10 points]
+---------------------
+Write a Java method that searches through an integer array for a value. The method
+takes both the array and an integer value to look up as parameters. The method must
+return a boolean value: true if the value is present in the array or otherwise false.
+
+Skim the below paragraph for the first time. It tells you how the test code is organized.
+First get the search method correct, with the given array and integer.
+
+The code for getting inputs is already provided. It gets the size of the array, followed
+by elements of the array. Then it gets the number of testcases and for each test case,
+the integer value that will be checked for presence in the array.  You just need to write
+the search method.
+
+import java.util.Scanner;
+public class Search {
+
+	public static boolean search(int [] arr, int value){
+		//Your search method here.
+	}
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter the size of array:");
+		int size = input.nextInt();
+		int arr[] = new int[size];
+
+		System.out.println("Enter elements of array");
+		for(int i = 0; i < size; ++i)
+			arr[i] = input.nextInt();
+
+		System.out.println("Enter number test cases:");
+		int testcases = input.nextInt();
+		while(testcases-- > 0){
+			System.out.println("Enter the number to checked if it belongs to the array");
+			int val = input.nextInt();
+			boolean result = search(arr, val);
+			if(result)
+				System.out.println("Element is present");
+			else
+				System.out.println("Element is not present");
+		}
+		
+			
+	} 
+}
+
+
+7. Minimum element in an array [15 points]
+------------------------------------------
+   Given below is a Java method min to get an integer array as a parameter and return
+   the minimum integer value in the array.
+
+   		public static int min(int [] arr){
+			int min = Integer.MAX_VALUE; //Maximum integer value in Java.
+			for(int i = 0; i < arr.length; ++i)
+				min = (arr[i] < min)? arr[i]: min;
+			return min;
+		}
+	
+   a) Overload the method min to find the minimum integer from indices a to b, which are
+   also integers (such that a <= b) and both are from 0 to arr.length - 1. In our tests
+   a and b are guaranteed to be within the above stated ranges. Use the code snippet given
+   below.
+
+		import java.util.Scanner;
+
+		public class ArrayMin {
+			public static int min(int [] arr, int a, int b){
+				// Write your code here.
+			}
+			public static void main(String[] args) {
+				Scanner input = new Scanner(System.in);
+
+				int size = input.nextInt();
+				int arr[] = new int[size];
+				for(int i = 0; i < size; ++i)
+					arr[i] = input.nextInt();
+
+				int a = input.nextInt();
+				int b = input.nextInt();
+
+				int minimum = min(arr, a, b);
+				System.out.println("Minimum is "+minimum);
+			}
+
+		}
+
+   b) Write a Java method min_pos to return the index of the minimum integer value in an
+   array. If there are many such values return the least index. You must check the entire
+   array from start to end.
+
+	Sample Intput:
+	--------------
+	{1, 2, -12, 3, 4}
+
+	Sample Output:
+	--------------
+	2
+
+8. Swap and Shuffle [15 points]
+-------------------------------
+Part A
+------
+
+The code snippet below is an example of pass by reference. We also provide a sample method
+setZeroAt, which sets 0 at a position i in the array, to illustrate pass by reference.
+
+	public class Sample{
+				public static void setZeroAt(int [] arr, int i){
+					arr[i] = 0;
+				}
+
+				public static void main(String[] args) {
+					Scanner input = new Scanner(System.in);
+					int sample[] = {1, 2, 3};
+					setZeroAt(sample, 1);
+					//Now sample looks like {1, 0, 3}
+				}
+	}
+
+Write a Java method that takes an array and two integer indices a and b. If a and b are
+valid integer indices for the array, swap the values in that position.
+
+Also ensure that the two indices are valid. If not, do not swap the values. Remember that
+when you pass an array as a parameter, it is passed by reference.  Use the code snippet below.
+
+For example, consider the array {0, 1, 2, 3}. For a = 0, b = 2, the swapped array must be
+{2, 1, 0, 3}. You can swap with a = 2, b = 0 on the original array to get the same result.
+
+		import java.util.Scanner;
+
+		public class SwapArrayIndex {
+			
+			public static void print_array(int [] arr){
+				for(int i = 0; i < arr.length; ++i)
+					System.out.print(arr[i]+" ");
+				System.out.println();
+			}
+			public static void main(String[] args) {
+				Scanner input = new Scanner(System.in);
+				//Start of Sample Code
+				int sample[] = {1, 2, 3};
+				setZeroAt(sample, 1);
+				//Now sample looks like {1, 0, 3}
+				//End of Sample Code
+				int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+				print_array(arr);
+				int a = input.nextInt();
+				int b = input.nextInt();
+				swap(arr, a, b);
+				print_array(arr);
+			}
+		}
+
+Part B: Random Shuffling
+------------------------
+Use swap method to perform random shuffling. Write a shuffle method that takes an array. It
+generates two valid indices randomly, that can be swapped and calls the swap method to swap
+the positions in the array. Look at question 1 for generating a valid index (but look out for
+an obvious pitfall).
+
+9. Find the missing element.  [20 points]
+-----------------------------------------
+Given an array of size n, containing values from 0 to n (not in order) with one missing value,
+write a Java method to find the missing value. 
+
+For example, consider {7, 1, 0, 3, 2, 6, 4} an array of size 7 containing values from 0 to 7. 
+The missing value is 5. Your method must return 5.
+
+Hint: Use code from search to achieve this.
+
+Sample Test Cases: 
+n = 7
+{7, 1, 0, 3, 2, 6, 4} // 5 is missing
+{5, 1, 0, 3, 2, 6, 4} // 7 is missing
+{5, 1, 7, 3, 2, 6, 4} // 0 is missing
+{5, 1, 7, 3, 4, 0, 2} // 6 is missing
+
+Extra Credit: [10 points]
+-------------------------
+Write a Java update method that takes an integer n, and returns an m based on the below conditions.
+m =  n/2, if n is even
+m =  3 * n + 1, if n is odd 
+
+Starting from any positive integer, repeated application of the method, seems to give a result 1.
+For example, starting with 5.
+update(5) = 16
+update(16) = 8
+update(8) = 4
+update(4) = 2
+update(2) = 1
+
+Your task is to find this sequence from number n to 1.
+The sequence for 22 is 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1.
