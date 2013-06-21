@@ -2,31 +2,31 @@ import java.util.Scanner;
 
 class ComplexNumber{
 	private int real;
-	private int imaginary;
+	private int imag;
 	
 	ComplexNumber(int r, int i){
 		real = r;
-		imaginary = i;
+		imag= i;
 	}
 	
-	void setReal(int real){
-		this.real = real;
+	void setReal(int realValue){
+		real = realValue;
 	}
 	
 	void setImaginary(int imaginary){
-		this.imaginary = imaginary;
+		imag = imaginary;
 	}
 	
 	void display(){
-		System.out.println(real+" + j"+imaginary);
+		System.out.println(real+" + j"+imag);
 	}
 	double magnitude(){
-		return Math.sqrt(real * real + imaginary * imaginary);
+		return Math.sqrt(real * real + imag* imag);
 	}
 	ComplexNumber add(ComplexNumber other){
-		int real = this.real + other.real;
-		int img = this.imaginary + other.imaginary;
-		ComplexNumber c = new  ComplexNumber(real ,img);
+		int realValue = real + other.real;
+		int imgValue = imag+ other.imag;
+		ComplexNumber c = new  ComplexNumber(realValue ,imgValue);
 		return c;
 	}
 }

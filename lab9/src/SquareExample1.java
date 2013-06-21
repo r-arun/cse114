@@ -4,29 +4,28 @@ class Square{
 	private double side;
 	static int count;
 	Square(){
-		count++;
+		++count;
 	}
 	Square(double n){
-		this.side = n;
-		count++;
+		side = n;
+		++count;
 	}
-	void setSide(double n){
-		this.side = n;
+	void setSide(double newSide){
+		side = newSide;
 	}
 	double getSide(){
-		return this.side;
+		return side;
 	}
 	
-	double sumSides(Square s){
-		System.out.println("Size of this square: "+this.side);
-		System.out.println("Size of this square: "+s.side);
-		double total = this.side + s.side;
+	double sumSides(Square otherSquare){
+		System.out.println("Size of this square: "+side);
+		System.out.println("Size of other square: "+otherSquare.side);
+		double total = side + otherSquare.side;
 		return total;
 	}
 	
-	Square createNewSqaure(double side){
-		double new_side = this.side + side;
-		Square s = new Square(new_side);
+	Square createNewSqaure(double newSide){
+		Square s = new Square(side + newSide);
 		return s;
 	}
 }

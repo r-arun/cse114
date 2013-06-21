@@ -91,7 +91,7 @@ considered as correct only if the above is followed correctly.
 
 name is City's name, while xpos and ypos are its co-ordinates.
 
-(a) Write a constructor that takes a string and two integers and sets
+(a) Write a public constructor that takes a string and two integers and sets
 	the three member function to the passed values.
 
 (b) Write public member methods (getters) for City class named:
@@ -115,7 +115,26 @@ name is City's name, while xpos and ypos are its co-ordinates.
 	Distance between P and Q is sqrt( dx * dx + dy * dy). Use Math.sqrt for computing
 	square-root.
 
-	The method signature must be: public double computeDistance(City another);
+	The method signature must be: public double computeDistance(City otherCity).
+	The distance in this example is 14.142. Use the code snippet for testing, but
+	you code should work for any general case.
+
+ 
+
+Sample Code:
+------------
+public class CityExample {
+	public static void main(String[] args) {
+		City nyc = new City("New York", 10, 10);
+		City sfo = new City("San Francisco", 20, 20);
+		nyc.printAll();
+		sfo.printAll();
+		System.out.print("Distance between "+ nyc.getName()+ " and ");
+		System.out.println(sfo.getName()+" "+nyc.dist(sfo));
+	}
+
+}
+
 
 3. Write a Java class for representing Complex numbers. A complex number is generally
 written as x + j y, where x represents the real part and y the imaginary part.
@@ -130,10 +149,11 @@ written as x + j y, where x represents the real part and y the imaginary part.
 (c) Write a member method printNumber that (does not take any parameters) prints the
 	complex number as (real + j img)
 
-(d) Write a member method magintude that returns a double corresponding tothe magnitude
+(d) Write a member method magnitude that returns a double corresponding to the magnitude
 	of the complex number. Magnitude = sqrt( x*x + y*y) for complex number x + j y.
 
 (e) Write a member method add that takes a ComplexNumber other, and returns the sum 
 	of this object and the other object as a new ComplexNumber. Look at createNewSquare
-	for hints. Let a = x1 + j y1 and b = x2 + j y2 be two complex numbers. Their sum is given by,
-	c = (x1 + x2) + j (y1 + y2). Return the ComplexNumber corresponding to sum of a and b.
+	for hints. Let a = x1 + j y1 and b = x2 + j y2 be two complex numbers. Their sum is
+	given by, c = (x1 + x2) + j (y1 + y2). Return the ComplexNumber corresponding to sum
+	of a and b.
