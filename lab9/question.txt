@@ -1,0 +1,139 @@
+0. Square class from the previous lab is listed here. It has two new methods
+sumSides and createNewSquare.
+
+
+	class Square{
+		private double side;
+		static int count;
+		Square(){
+			count++;
+		}
+		Square(double n){
+			this.side = n;
+			count++;
+		}
+		void setSide(double n){
+			this.side = n;
+		}
+		double getSide(){
+			return this.side;
+		}
+		
+		double sumSides(Square s){
+			System.out.println("Size of this square: "+this.side);
+			System.out.println("Size of this square: "+s.side);
+			double total = this.side + s.side;
+			return total;
+		}
+		
+		Square createNewSqaure(double side){
+			double new_side = this.side + side;
+			Square s = new Square(new_side);
+			return s;
+		}
+	}
+
+* sumSides method of a Square object takes another Square object as an 
+  argument. Adds the side of the other square to the side of the current 
+  object and returns the sum of the sides of both squares.
+
+* createNewSquare object takes a side length adds it to the current square's
+  length and returns a new Square object.
+
+  It is important to note that,
+  1. sumSides method takes another Square object as argument.
+
+  2. createNewSquare returns a Square object. It also calls its own
+  constructor method.
+
+We will make use of the above two ideas in the following questions. So
+carefully execute/trace behaviour of the below piece of code that uses
+Square class.
+
+	public class SquareExample1 {
+
+		public static void main(String[] args) {
+			Square s1 = new Square(10.0);
+			Square s2 = new Square();
+			System.out.println(Square.count);
+			//Note static access from class instead of object
+			s2.setSide(20.0);
+			System.out.println(s1.sumSides(s2));
+			Square s3 = s1.createNewSqaure(5.0);
+			System.out.println(s3.getSide());
+			
+		}
+
+	}
+
+
+1. Add a new method getLongerSide to Square class that takes as parameter a
+Square object sqr, compares the sides of current (this) object and sqr,
+returning the longerSide.
+
+The signature of the method is - double getLongerSide(Square other). Note 
+that this method must be a member of Square class. Your solution will be
+considered as correct only if the above is followed correctly.
+
+	public static void main(String[] args) {
+			Square s1 = new Square(10.0);
+			Square s2 = new Square(20.0);
+			double longer = s2.getLongerSide(s1);
+			System.out.println("Longer square has side "+longer);
+			
+		}
+
+2. Write a Java class City has three private members -
+
+	String name,
+	int xpos,
+	int ypos
+
+name is City's name, while xpos and ypos are its co-ordinates.
+
+(a) Write a constructor that takes a string and two integers and sets
+	the three member function to the passed values.
+
+(b) Write public member methods (getters) for City class named:
+	getName, getX, getY that return name, xpos and ypos values respectively. 
+	Note that in general, getter methods do not take a parameter and return
+	the same type as the member variable. Example getName returns String,
+	while getX return a double.
+
+(c) Write public member methods (setters) for City class named:
+	setName, setX, setY that set name, xpos and ypos respectively of the
+	City object. In general, setter method of a member takes a variable and sets
+	the value of the  member as the value of the variable. For example look at
+	setSide method of Square.
+
+(d) Write a public method computeDistance for City class. It must take another
+	City as a parameter and return the distance between the two cities. The distance
+	returned is a double.
+
+	Lets compute distance between two points P = (x1, y1) and Q = (x2, y2).
+	Let dx = x1 - x2, dy = y1 - y2.
+	Distance between P and Q is sqrt( dx * dx + dy * dy). Use Math.sqrt for computing
+	square-root.
+
+	The method signature must be: public double computeDistance(City another);
+
+3. Write a Java class for representing Complex numbers. A complex number is generally
+written as x + j y, where x represents the real part and y the imaginary part.
+
+(a) Design a class ComplexNumber to represent complex numbers with real and imaginary 
+	parts as private members. Let the members be integers. Name them as real and img
+	for real and imaginary respectively.
+
+(b) Write a constructor ComplexNumber that takes a real part (int) and imaginary part
+	(int) and creates a Complex Number with these values (real + j img).
+
+(c) Write a member method printNumber that (does not take any parameters) prints the
+	complex number as (real + j img)
+
+(d) Write a member method magintude that returns a double corresponding tothe magnitude
+	of the complex number. Magnitude = sqrt( x*x + y*y) for complex number x + j y.
+
+(e) Write a member method add that takes a ComplexNumber other, and returns the sum 
+	of this object and the other object as a new ComplexNumber. Look at createNewSquare
+	for hints. Let a = x1 + j y1 and b = x2 + j y2 be two complex numbers. Their sum is given by,
+	c = (x1 + x2) + j (y1 + y2). Return the ComplexNumber corresponding to sum of a and b.
