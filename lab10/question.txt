@@ -1,0 +1,71 @@
+1. Given below is an example of containment or has-a relation. In this example, we will
+look at Kit class which contains a Shirt class object. The two classes are show below.
+
+Shirt class has two methods clone and isEqual. The clone method when called on an object,
+returns a new object with same member values as the current object. For eg, s3 is the new
+object obtained by calling clone on s1.
+
+isEqual method return true, if an object has same value for all members as the current object.
+If any value is different it must return a false. For each member variable, the following rules
+must be used to check for equality.
+
+1. Primitives, == operator.
+2. String, equals method.
+3. Contained Object, isEqual method of the object contained. 
+
+For eg, to isEqual method for Kit must use, == for id, equals for sponsor and
+invoke isEqual method for shirt object.
+
+To the Kit class, add code for clone and isEqual.
+
+class Shirt{
+	String brand;
+	String color;
+	int size;
+	
+	public Shirt(String newBrand, String newColor, int newSize){
+		brand = newBrand;
+		color = newColor;
+		size = newSize;
+	}
+	
+	public Shirt clone(){
+		return new Shirt(brand, color, size);
+	}
+	
+	public boolean isEqual(Shirt other){
+		if(brand.equals(other.brand) && color.equals(other.color) && size == other.size)
+			return true;
+		return false;
+	}
+	public String toString(){
+		return("Brand "+brand+" Color "+color+" "+size+" "+size);
+	}
+}
+
+class Kit{
+	int id;
+	String sponsor;
+	Shirt shirt;
+	
+	public Kit(int newId, String newSponsor, Shirt newShirt){
+		id = newId;
+		sponsor = newSponsor;
+		shirt = newShirt;
+	}
+}
+
+public class Problem1{
+	public static void main(String args[]){
+		Shirt s1 = new Shirt("nike","red",20);
+		Shirt s2 = new Shirt("nike","blue", 20);
+		Shirt s3 = s1.clone();
+		System.out.println(s3);
+		System.out.println(s1.isEqual(s2));
+		System.out.println(s1.isEqual(s3));
+		Kit k1 = new Kit(10,"aaa",s1);
+		Kit k2 = new Kit(12,"aaa",s2);
+		Kit k3 = new Kit(10,"aaa",s3);
+	}
+}
+
