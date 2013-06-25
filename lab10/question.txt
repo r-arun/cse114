@@ -69,3 +69,26 @@ public class Problem1{
 	}
 }
 
+2. Get a binary number as a String and flip the 0's and 1's in the number. Use StringBuilder/
+StringBuffer APIs to perform this operation and return the flipped number.
+
+Sample Input:
+-------------
+0101
+
+Sample Output:
+--------------
+1010
+
+3. We are going to write the numbers from 1 to n ecah separated by a space in a file. Writing a file
+is not much different from printing to console. Use File and PrintWriter classes as in lecture to 
+write the file. You must get the last number to be printed and the name of the file from the console
+as usual (need not be read from another file).
+
+4. Read a file using the API given by File class and Scanner. Read the previously written file in question
+3 and find the sum of all numbers in the file. You can use hasNextInt() similar to hasNext() method and
+use nextInt() to read the integer.
+
+You must get the name of the file from the console and check if the file exists before you start reading.
+
+4.
