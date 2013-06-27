@@ -1,0 +1,338 @@
+0. a. Warm Up
+Writing to a file. This sample program is from the lecture. This writes 
+to a file named, "scores.txt". Run this program and modify the code to
+familiarize yourself with PrintWriter class and File class. The file name
+"scores.txt" is passed as a String. Change the program to get the file name
+from console and open that file (you can store the file name in a String
+variable).
+
+import java.io.IOException;
+import java.io.File;
+import java.io.PrintWriter;
+
+
+public class FileWriting {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file = new File("scores.txt");
+		if (file.exists()) {
+			System.out.println("File already exists");
+			System.exit(0);
+		}
+		// Create the file
+		PrintWriter output = null;
+		try {
+			output = new PrintWriter(file);
+			// Write output to the file
+			output.print("John T Smith ");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// Close the file
+		output.close();
+
+	}
+
+} 
+
+0. b. Warm Up
+The program given below, reads a file and counts the number of words and
+non-space characters in the file. You can create a new file by right-clicking
+on your project name in the Project Explorer and select New -> File and give
+it the name "test.txt".
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
+public class FileReading {
+
+	public static void main(String[] args) {
+		Scanner input = null;
+		try {
+			input = new Scanner(new File("test.txt"));
+			int wordCount = 0;
+			int charCount = 0;
+			while(input.hasNext()){
+				String s = input.next();
+				charCount += s.length();
+				++wordCount;
+			}
+			System.out.println(wordCount);
+			System.out.println(charCount);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		input.close();
+		//Always close Scanner when reading from file
+	}
+
+}
+
+1. We are going to write the numbers from 1 to n each separated by a space
+in a file.   You must get the last number to be printed and the name of the
+file from the console as usual (need not be read from another file).
+
+2. Read a file using the API given by File class and Scanner. The file contains
+positive integer numbers find the square root of sum of all numbers in the file.
+You can use hasNextInt() similar to hasNext() method and use nextInt() to
+read the integer value.
+
+Once you have computed the square root of sum - val, print how many numbers are
+greater than val and how many are less than val.
+
+One way to do perform this counting is to store numbers read from the file in an
+array and after computing val, comparing the array contents with val to get the
+count of greater and lesser elements.
+
+You must get the name of the file from the console and check if the file exists
+before you start reading.
+
+3. Consider the Person class below. It has two members variables name and age.  It
+also has two constructors and two methods getInfo and getAge. The default constructor
+(that does not take any argument) sets the name of the person to "Unknown".
+
+class Person {
+	String name;
+	int age;
+	
+	public Person(){
+		name = "Unknown";
+	}
+	
+	public Person(String newName, int newAge){
+		name = newName;
+		age = newAge;
+	}
+	
+	public int increaseAge() {
+		age = age + 1;
+	}
+	
+	public void getInfo(){
+		System.out.println("Name: "+ name+" age: "+age);
+	}
+	
+}
+
+You can inherit from Person class using the extends keyword.
+
+class SuperHero extends Person {
+
+	String fictionalName;
+	String superPower;
+	
+	public SuperHero(String originalName, int newAge, String nickName, String newSuperPower){
+		name = originalName;
+		age = newAge;
+		fictionalName = nickName;
+		superPower = newSuperPower;
+	}
+
+	public void save(){
+		System.out.println(fictionalName+" "+superPower+" and saves the day!");
+	}
+	
+	public void getInfo(){
+		System.out.println("Ficitional Name: "+fictionalName+ " Super Power: "+superPower);
+	}
+
+}
+
+This class is similar to other classes we have seen except for the extends keyword
+and the class name Person. Person is the base class or parent class for SuperHero
+class.  SuperHero is called the subclass of Person. SuperHero defines fictionalName
+and superPower variables. It also defines a new method save. It also overloads getInfo
+method from the super class.
+
+
+SuperHero does not define name and age, but sets them in the constructor. This is valid
+since, name and age are public members of Person. In general any sub class can access
+non-private members (both variables and methods) of a super class. But super class can
+not access any variable newly defined at a subclass.
+
+	SuperHero        <---------------------->     Person
+	Sub Class                                     Super Class
+
+					----------------------------
+					|          Class           |
+					----------------------------
+					|          Variables       |
+					----------------------------
+					|        Constructors      |
+					----------------------------
+					|          Methods         |
+					----------------------------
+					   Organization of a Class
+
+					----------------------------
+					|        Sub Class         |
+					----------------------------
+					|       Super Class        |
+					|        Variables         |
+					----------------------------
+					|         Variables        |
+					----------------------------
+					|        Constructors      |
+					----------------------------
+					|       Super Class        |
+					|          Methods         |
+					----------------------------
+					|          Methods         |
+					----------------------------
+					 Organization of a subclass
+
+public class Inhertiance1 {
+
+
+	public static void main(String[] args) {
+		Person p1 = new Person("Harry Potter", 19);
+		SuperHero h1 = new SuperHero("Peter Parker", 20, "Spider", "spins web");
+		System.out.println(p1.name);
+		System.out.println(p1.age);
+		
+		System.out.println(h1.name); //Member from super class
+		System.out.println(h1.age);
+		System.out.println(h1.fictionalName);
+		System.out.println(h1.superPower);
+		
+		System.out.println(p1.superPower); //Person does not have superPower
+		
+		h1.save();
+		p1.save();   //does not work since super class does not have save
+		
+		p1.getInfo(); //super class method
+		h1.getInfo(); //overloaded method.
+	}
+
+}
+
+
+p1 is a reference to Person, h1 is a reference to SuperHero. Through h1 you can access
+name and age, which are members of the super class. Run this program and observe the
+relationship between super class and sub class. There are some bugs, you can comment
+them out and continue with running the program. Your task will be to explain what any
+line of code does, during submission.
+
+
+You can copy all the code snippets and paste them in a single file Inheritance1.java.
+
+4. A general shape class is shown below. Shape has a dimension. It also defines 
+constructors, getters, setters and a toString method. 
+
+
+class Shape{
+	int dimension;
+	
+ 	public Shape(){
+		
+	}
+	
+	public Shape(int newDimension){
+		dimension = newDimension;
+	}
+	
+	public int getDimension(){
+		return dimension;
+	}
+	
+	public void setDimension(int newDimension){
+		dimension = newDimension;
+	}
+	
+	public String toString(){
+		return "Shape has dimension "+dimension;
+	}
+}
+
+a. Define classes Circle and Square, which inherit from Shape class.
+b. Both classes must have two constructors similar to Shape class.
+c. They must also implement a getArea method which returns the area of the shape.
+   For circle dimension is the radius; for square it is the side. For Circle getArea
+   must return a double, while for Square it is an int.
+d. Also overload toString method, to return a String representing description
+   (like Circle has radius 10 or Square has side 10).
+
+e. Define a new class Rectangle that has a new intger variable breadth.  The length
+   of the rectangle is the superclass variable dimension.
+   (Use dimension in code for length in, getArea and toString method. You need not
+   create a new local variable).
+
+f. Define  a constructor for Rectangle that takes two integers and sets the dimension
+   and breadth.
+g. Define a getter and setter for breadth in Rectangle class.
+h. Also define a getArea method and toString method for the Rectangle class.
+
+You can use the sample program below to test your code.
+
+public class Problem4 {
+
+	public static void main(String[] args) {
+		Square s = new Square(10);
+		System.out.println(s);
+		System.out.println("Side = "+s.getDimension());
+		System.out.println("Area = "+s.getArea());
+		System.out.println();
+		
+		Circle c = new Circle(10);
+		System.out.println(c);
+		c.setDimension(5);
+		System.out.println("Area = "+c.getArea());
+		System.out.println();
+		
+		Rectangle r = new Rectangle(5, 10);
+		System.out.println(r);
+		System.out.println("Breadth = "+r.getBreadth());
+		System.out.println("Area = "+r.getArea());
+	}
+
+}
+
+Sample Output:
+--------------
+Square has side 10
+Side = 10
+Area = 100
+
+Cirlce has radius 10
+Area = 78.53981633974483
+
+Rectangle has length 5 breadth 10
+Breadth = 10
+Area = 50
+
+
+Extra Credit
+------------
+1. Consider a 4 lettered encoded string "2A3B". The string is decoded as, "AA BBB". In general a string
+of the form, "nXmY" is decoded as, "XXXX(n times)[space]YYYYY(m times)".
+
+n and m are from 1 to 9. X and Y are one character from 'A' to 'Z'.
+
+Write a Java program to get an encoded String and print its decoded form.
+
+Sample Input:
+-------------
+5C3D
+
+Sample Output:
+--------------
+CCCCC DDD
+
+
+2. Get a binary number as a String and flip the 0's and 1's in the number. Use StringBuilder/
+StringBuffer APIs to perform this operation and return the flipped number. Make sure only a
+single object is created for representing the binary number through through out your program.
+
+Sample Input:
+-------------
+0101
+
+Sample Output:
+--------------
+1010
+
+
