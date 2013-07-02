@@ -1,0 +1,122 @@
+1. Warm Up:
+Given program performs some arithmetic operations with the BigInteger class.
+
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class BigIntegerExample {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String n1 = input.next();
+		String n2 = input.next();
+		BigInteger b1 = new BigInteger(n1);
+		BigInteger b2 = new BigInteger(n2);
+		System.out.println(b1.add(b2)); // A reference to new object is returned
+		System.out.println(b1); // b1 itself does not change
+		System.out.println(b1.subtract(b2));
+		System.out.println(b1.multiply(b2));
+		System.out.println(b1.divide(b2));
+		String n3 = input.next();
+		System.out.println(b1.add(new BigInteger(n3)));
+		
+	}
+
+}
+
+2. For any positive integer compute the factorial of that number using BigInteger
+class.
+
+3. Write a class WeeklyLog which can be used to track data for each day of a week.
+For example, we can use the class to represent the temperature of a town for every
+day of the week. Provide the class with constructors, getters and setters.
+
+class WeeklyLog{
+	private double data[];
+
+	public WeeklyLog(){
+		data = new double[7];
+	}
+
+	public WeeklyLog(double arr[]){
+		data = arr;
+	}
+
+	public double[] getData() {
+			return data;
+	}
+
+	public void setData(double data[]) {
+		this.data = data;
+	}
+}
+
+Now provide a class WeeklyStatistics, that provides the below static methods.
+1. Mean (Average).
+2. Median (The middle value when *ordered*).
+For any array 5 1 6 4 7, the median is 5 instead of 6.
+3. Minimum value of data.
+4. Maximum value of data.
+
+Each method must take a WeeklyLog object and return appropriate values.
+
+For testing your code, use the below code.
+
+4. Given below is the BasicCalculator class.
+
+class BasicCalculator {
+	private String name;
+	private int price;
+	
+	BasicCalculator(){
+		
+	}
+	BasicCalculator(String newName, int newPrice){
+		name = newName;
+		price = newPrice;
+	}
+	public int add(int a, int b){
+		return a+b;
+	}
+	public int subtract(int a, int b){
+		return a-b;
+	}
+	public int multiply(int a, int b){
+		return a*b;
+	}
+	public int divide(int a, int b){
+		return a/b;
+	}
+	public String getName(){
+		return name;
+	}
+	public void setName(String newName){
+		name = newName;
+	}
+	public String getPrice(){
+		return price;
+	}
+	public void setPrice(int newPrice){
+		name = newPrice;
+	}
+}
+
+a) Extend this class to a StandardCalculator class, which also supports exponentation and
+modulo in addition to the above operations. Assume all parameters and return types are
+integers.
+
+b) Change the access specifiers of BasicCalculator so that any sub class can access name
+member.
+
+c) Extend BasicCalculator to AdvancedCalculator which has two modes of operation binary and
+decimal. You must provide exactly one method for each operation (like add, subtract) that
+takes the same signature as in the BasicCalculator class  and depending on the mode value,
+performs binary or decimal addition. You only need to support addition, subtraction, multiplication
+and division.
+
+d) Extend BasicCalculator to ScientificCalculator which supports only decimal operation. But
+can perform calculation on arbitrarily large numbers using BigIntegers.  You only need to support
+addition, subtraction, multiplication and division. You must still allow operations that take
+only ints as parameters to follow the same implemention. Use print statements to point out
+the difference between the methods serviced from ScientificCalculator and those from
+BasicCalculator. For convenience print only from ScientificCalculator.
