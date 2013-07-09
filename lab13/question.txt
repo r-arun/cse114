@@ -1,0 +1,165 @@
+1. Array of Objects:
+a) Look at the code below. In the main method, we create an array of type Student
+with 5 objects. We then try to print each of the object. What do you observe
+here? Has the array object been created?
+
+	class Student{
+		String name;
+		int mark;
+		public Student(String newName, int newMark){
+			name = newName;
+			mark = newMark;
+		}
+	}
+
+	public class StudentArray {
+		/**
+		*@return The average of all marks in the array
+		*/
+		public static double getAverage(Student [] array){
+			//Your code here.	
+		}
+
+		/**
+		* Prints the name and mark of each student
+		*/
+		public static void printClassDetail(Student [] array){
+			//Your code here.	
+		}
+		public static void main(String args[]){
+			Student [] section = new Student[5];
+			for(int i = 0; i < section.length; ++i){
+				System.out.print(section[i]+" ");
+				//Access object at index i
+			}
+			System.out.println();
+			//TODO Initialize each object in the array with a constructor
+			//TODO call getAverage(section)
+			//TODO call printClassDetail(section)
+		}
+	}
+
+
+b)  Has any student object been created in the above program? Give a reason
+supporting your answer. If yes, what are their values? If not how can you
+initalize each student object in the array?
+
+c) Write a printClassDetail method. Given a Student array, it must print
+the name and mark for every Student in the array starting from index 0.
+
+d) Write a getAverage method, which given a Student array returns the
+average of all scores.
+
+#TODO Add a simple explaining, how to extend ann use base class reference.
+2. Reference vs Object
+Once an object is created by the new operator, we can use through a reference
+of the same type. We know that we can use a base-class  reference to use the
+object.
+
+An object is like a Television set. The reference is like a Remote Controller.
+-Anonymous
+
+Though the access specifiers control the access of an object's member within a
+given scope (within class, within subclass or outside the class hierarchy), the
+actual methods exposed by an object also depends on the type of the reference.
+
+If we use a base class B, reference for an object of type S which extends from
+B through one or more classes, only methods defined at or inherited by B will
+be exposed. Other methods will not be exposed.
+
+import java.util.Scanner;
+
+class BasicTV{
+	private int volume;
+	private int channel;
+	private String type;
+	public BasicTV(){
+		volume = 0;
+		channel = 0;
+		type = "basic";
+	}
+	public void increaseVolume(){
+		++volume;
+		System.out.println(type+" VOL "+volume);
+	}
+	public void decreaseVolume(){
+		if(volume > 0)
+			--volume;
+		System.out.println(type+" VOL "+volume);
+	}
+	public void setChannel(int newChannel){
+		channel = newChannel;
+		System.out.println(type+" CH "+channel);
+	}
+	public int getChannel(){
+		System.out.println(type+" CH "+channel);
+		return channel;
+	}
+	protected void setType(String newType){
+		type = newType;
+	}
+	protected String getType(){
+		return type;
+	}
+}
+
+class AdvancedTV extends BasicTV{
+	private boolean threeD;
+	public AdvancedTV(){
+		threeD = false;
+		setType("advanced");
+	}
+	public void setThreeD(boolean newThreeD){
+		threeD = newThreeD;
+		System.out.println(getType()+" 3D: "+threeD);
+	}
+	public boolean getThreeD(){
+		System.out.println(getType()+" 3D: "+threeD);
+		return threeD;
+	}
+}
+public class TVRemote {
+	public static void main(String args[]){
+		AdvancedTV remote1 = new AdvancedTV();
+		remote1.increaseVolume();
+		remote1.setThreeD(true);
+		BasicTV remote2 = remote1;
+		remote2.increaseVolume();
+		//remote2.setThreeD(false);
+	}
+}
+
+Basic TV Object     |     Basic TV reference
+--------------------|------------------------
+Object              |     Reference
+TV                  |     Remote
+Methods             |     Visibilty 
+---------------------------------------------
+increaseVolume      |     Yes
+decreaseVolue       |     Yes
+setChannel          |     Yes
+=============================================
+
+
+Advanced TV Object  |     Basic TV reference
+--------------------|------------------------
+Object              |     Reference
+TV                  |     Remote
+---------------------------------------------
+Methods             |     Visibility   
+---------------------------------------------
+increaseVolume      |     Yes   
+decreaseVolue       |     Yes
+setChannel          |     Yes
+getChannel          |     Yes
+setThreeD           |     No (setThreeD not defined in BasicTV)
+getThreeD           |     No (getThreeD not defined in BasicTV)
+==============================================
+
+a) Create a new class that extends from AdvancedTV. The new class must have a
+new variable resolution, which is an integer. Provide required constructors,
+getter and setter for the new class.
+
+b) Create an object and use reference of BasicTV to access the newly created
+object. Can you set the resolution using this reference?
+
