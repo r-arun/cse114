@@ -18,10 +18,8 @@ public class TestQuestion3 extends Question3{
 		
 		for(int i = 0; i < a.length; i++) {
 			if(a[i] == pattern[0]) {
-				for(int j = 1; j < pattern.length; j++) {
-					if(i + j > a.length) {
-						return flag;
-					} else if(a[i + j] != pattern[j]) {
+				for(int j = 1; j < pattern.length && i + j < a.length; j++) {
+					if(a[i + j] != pattern[j]) {
 						return flag;
 					}
 				}
@@ -74,31 +72,48 @@ public class TestQuestion3 extends Question3{
 		char[] testPatternC1 = {'a', 'a', 'a' };
 		
 		boolean expected = true;
-		boolean result = hasMatchingPattern(testArray,testPatternA);
-		expected = hasMatchingPattern1(testArray,testPatternA);
-		if(result == expected)
-			++points;	
-		else{
-			System.out.println("Case 2: Failed \nReturned: "+result+" \nExpected: "+expected);
+		boolean result = true;
+		try{
+			result = hasMatchingPattern(testArray,testPatternA);
+			expected = hasMatchingPattern1(testArray,testPatternA);
+			if(result == expected)
+				++points;	
+			else{
+				System.out.println("Case 2: Failed \nReturned: "+result+" \nExpected: "+expected);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Case 2: Failed \nException thrown ");
+			e.printStackTrace();
 		}
 		
-		result = hasMatchingPattern(testArray,testPatternB);
-		expected = hasMatchingPattern1(testArray,testPatternB);
-		if(result == expected)
-			++points;	
-		else{
-			System.out.println("Case 3: Failed \nReturned: "+result+" \nExpected: "+expected);
+		try{
+			result = hasMatchingPattern(testArray,testPatternB);
+			expected = hasMatchingPattern1(testArray,testPatternB);
+			if(result == expected)
+				++points;	
+			else{
+				System.out.println("Case 3: Failed \nReturned: "+result+" \nExpected: "+expected);
+			}
 		}
-
-		
-		result = hasMatchingPattern(testArray,testPatternC);
-		expected = hasMatchingPattern1(testArray,testPatternC);
-		if(result == expected)
-			++points;	
-		else{
-			System.out.println("Case 4: Failed \nReturned: "+result+" \nExpected: "+expected);
+		catch(Exception e){
+			System.out.println("Case 3: Failed \nException thrown ");
+			e.printStackTrace();
 		}
 		
+		try{
+			result = hasMatchingPattern(testArray,testPatternC);
+			expected = hasMatchingPattern1(testArray,testPatternC);
+			if(result == expected)
+				++points;	
+			else{
+				System.out.println("Case 4: Failed \nReturned: "+result+" \nExpected: "+expected);
+			}
+		}	
+		catch(Exception e){
+			System.out.println("Case 4: Failed\nException thrown");
+			e.printStackTrace();
+		}
 		if(isEquals(testPatternA, testPatternA1)){
 			++points;
 		}
@@ -120,23 +135,33 @@ public class TestQuestion3 extends Question3{
 			System.out.println("Case 7: Failed \nArray is changed");
 		}
 
-		char [] testPatternD = {'a'};
-		result = hasMatchingPattern(testPatternC,testPatternD);
-		expected = hasMatchingPattern1(testPatternC,testPatternD);
-		if(result == expected)
-			++points;	
-		else{
-			System.out.println("Case 8: Failed \nReturned: "+result+" \nExpected: "+expected);
+		char [] testPatternD = {'z','y'};
+		try{
+			result = hasMatchingPattern(testArray,testPatternD);
+			expected = hasMatchingPattern1(testArray,testPatternD);
+			if(result == expected)
+				++points;	
+			else{
+				System.out.println("Case 8: Failed \nReturned: "+result+" \nExpected: "+expected);
+			}
 		}
-
-		result = hasMatchingPattern(testArray,testArray1);
-		expected = hasMatchingPattern(testArray,testArray1);
-		if(result == expected)
-			++points;	
-		else{
-			System.out.println("Case 9: Failed \nReturned: "+result+" \nExpected: "+expected);
+		catch(Exception e){
+			System.out.println("Case 8: Failed\nException thrown");
+			e.printStackTrace();
 		}
-		
+		try{
+			result = hasMatchingPattern(testArray,testArray1);
+			expected = hasMatchingPattern1(testArray,testArray1);
+			if(result == expected)
+				++points;	
+			else{
+				System.out.println("Case 9: Failed \nReturned: "+result+" \nExpected: "+expected);
+			}
+		}	
+		catch(Exception e){
+			System.out.println("Case 9: Failed\nException thrown");
+			e.printStackTrace();
+		}
 		System.out.println("Points : "+points+" out of 9");
 	}
 	

@@ -45,7 +45,7 @@ public class TestQuestion4 extends Question4 {
 	}
 
 	public static boolean isEquals(Person [] returned, Person [] expected){
-		expected = denullify(expected);
+		returned = denullify(returned);
 		if(expected == null && returned == null) return true;
 		if(returned == null || expected == null || returned.length != expected.length){
 			return false;	
@@ -76,8 +76,24 @@ public class TestQuestion4 extends Question4 {
 	
 	public static void main(String[] args) {
 		int points = 0;
+		Person[] _testPeople = {
+				new Person("Johnson, Randy"),
+				new Person("Matsui, Hideki"),
+				new Person("Jeter, Derek"),
+				new Person("Wang, Chien Ming"),
+				new Person("Mussina, Mike")};
+
+		Person[] _testPeople1 = {
+				new Person("Johnson, Randy"),
+				new Person("Matsui, Hideki"),
+				new Person("Jeter, Derek"),
+				new Person("Wang, Chien Ming"),
+				new Person("Mussina, Mike")};
+
+
 		Person[] testPeople = {
 				new Person("Johnson, Randy"),
+				new Person("John, Ran"),
 				new Person("Matsui, Hideki"),
 				new Person("Jeter, Derek"),
 				new Person("Wang, Chien Ming"),
@@ -88,10 +104,10 @@ public class TestQuestion4 extends Question4 {
 				new Person("Amit, Sahasarabuddhe"),
 				new Person("Kevin, Peterson")
 				};
-		testPeople[6].setAge(19);
-
+		testPeople[6].setAge(19); 
 		Person[] testPeople1 = {
 				new Person("Johnson, Randy"),
+				new Person("John, Ran"),
 				new Person("Matsui, Hideki"),
 				new Person("Jeter, Derek"),
 				new Person("Wang, Chien Ming"),
@@ -105,45 +121,80 @@ public class TestQuestion4 extends Question4 {
 
 		testPeople1[6].setAge(19);
 
-		sortPeopleAlphabetically(testPeople);
-		sortPeopleAlphabetically1(testPeople1);
-		if(isEquals(testPeople, testPeople1)){
-			++points;
+		try{
+			sortPeopleAlphabetically(_testPeople);
+			sortPeopleAlphabetically1(_testPeople1);
+			if(isEquals(_testPeople, _testPeople1)){
+				++points;
+			}
+			else{
+				System.out.println("Case 1: Failed");
+				System.out.println("Returned");
+				printArray(_testPeople);
+				System.out.println("Expected");
+				printArray(_testPeople1);
+			}
 		}
-		else{
-			System.out.println("Case 1: Failed");
-			System.out.println("Returned");
-			printArray(testPeople);
-			System.out.println("Expected");
-			printArray(testPeople1);
-		}
-		
-		Person[] jPeople = getPeopleStartingWithALetter(testPeople, 'J');
-		Person[] jPeople1 = getPeopleStartingWithALetter1(testPeople1, 'J');
-		if(isEquals(jPeople, jPeople1)){
-			++points;
-		}
-		else{
-			System.out.println("Case 2: Failed");
-			System.out.println("Returned");
-			printArray(jPeople);
-			System.out.println("Expected");
-			printArray(jPeople1);
+		catch(Exception e){
+			System.out.println("Case 1: Failed Exception");
 		}
 
-		Person[] mPeople = getPeopleStartingWithALetter(testPeople, 'M');
-		Person[] mPeople1 = getPeopleStartingWithALetter1(testPeople1, 'M');
-		if(isEquals(mPeople, mPeople1)){
-			++points;
+		try{
+			sortPeopleAlphabetically(testPeople);
+			sortPeopleAlphabetically1(testPeople1);
+			if(isEquals(testPeople, testPeople1)){
+				++points;
+			}
+			else{
+				System.out.println("Case 2: Failed");
+				System.out.println("Returned");
+				printArray(testPeople);
+				System.out.println("Expected");
+				printArray(testPeople1);
+			}
 		}
-		else{
-			System.out.println("Case 3: Failed");
-			System.out.println("Returned");
-			printArray(mPeople);
-			System.out.println("Expected");
-			printArray(mPeople1);
+		catch(Exception e){
+			System.out.println("Case 2: Failed Exception");
 		}
-		System.out.println("Points "+points+" out of 3");
+		
+		try{
+			Person[] jPeople = getPeopleStartingWithALetter(testPeople, 'J');
+			Person[] jPeople1 = getPeopleStartingWithALetter1(testPeople1, 'J');
+			printArray(jPeople);
+			printArray(jPeople1);
+			if(isEquals(jPeople, jPeople1)){
+				++points;
+			}
+			else{
+				System.out.println("Case 3: Failed");
+				System.out.println("Returned");
+				printArray(jPeople);
+				System.out.println("Expected");
+				printArray(jPeople1);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Case 3: Failed Exception");
+		}
+
+		try{
+			Person[] mPeople = getPeopleStartingWithALetter(testPeople, 'M');
+			Person[] mPeople1 = getPeopleStartingWithALetter1(testPeople1, 'M');
+			if(isEquals(mPeople, mPeople1)){
+				++points;
+			}
+			else{
+				System.out.println("Case 4: Failed");
+				System.out.println("Returned");
+				printArray(mPeople);
+				System.out.println("Expected");
+				printArray(mPeople1);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Case 4: Failed Exception");
+		}
+		System.out.println("Points "+points+" out of 4");
 	}
 	
 	// DO NOT CHANGE THIS METHOD
@@ -157,7 +208,7 @@ public class TestQuestion4 extends Question4 {
 				if (i < array.length - 1)
 					System.out.print(",\n\t\t");
 			}
-			System.out.print("\t]");
+			System.out.println("\t]");
 		}
 	}
 }

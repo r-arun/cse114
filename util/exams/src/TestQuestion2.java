@@ -12,23 +12,35 @@ public class TestQuestion2 extends Question2 {
 		//System.out.print("\n\nThe testArrayA: ");
 		//printArray(testArrayA);
 		BigInteger answer1 = new BigInteger("2222222222222222222222222222222");
-		BigInteger max = findLargestBigInteger(testArrayA);
-		//System.out.print(max);
-		if(max.equals(answer1)){
-			++points;
+		BigInteger max = null;
+		try{
+			max = findLargestBigInteger(testArrayA);
+			//System.out.print(max);
+			if(max.equals(answer1)){
+				++points;
+			}
+			else{
+				System.out.println("Case 1: Failed Exception");
+			}
 		}
-		else{
-			System.out.println("Case 1: Failed \nReturned: "+max+"\nExpecting: "+answer1);
+		catch(Exception e){
+			System.out.println("Case 1: Failed \nException");
 		}
 		/*end of case 1*/
 		BigInteger target = new BigInteger("123456789");
-		int position = searchBigInteger(testArrayA, target);
+		int position = 0;
+		try{
+			position = searchBigInteger(testArrayA, target);
 
-		if(position == 1){
-			++points;
+			if(position == 1){
+				++points;
+			}
+			else{
+				System.out.println("Case 2: Failed \nException");
+			}
 		}
-		else{
-			System.out.println("Case 2: Failed \nReturned: "+position+"\nExpecting: "+1);
+		catch(Exception e){
+			System.out.println("Case 2: Failed Exception");
 		}
 			
 		/*end of case 2*/
@@ -41,24 +53,34 @@ public class TestQuestion2 extends Question2 {
 		//System.out.print("\n\nThe testArrayB: ");
 		//printArray(testArrayB);
 		BigInteger answer2 = new BigInteger("8989898989898989898989898989898989898989");		
-		max = findLargestBigInteger(testArrayB);
-		//System.out.print(max);
-		if(max.equals(answer2)){
-			++points;
+		try{
+			max = findLargestBigInteger(testArrayB);
+			//System.out.print(max);
+			if(max.equals(answer2)){
+				++points;
+			}
+			else{
+				System.out.println("Case 3: Failed \nReturned: "+max+"\nExpecting: "+answer2);
+			}
 		}
-		else{
-			System.out.println("Case 3: Failed \nReturned: "+max+"\nExpecting: "+answer2);
+		catch(Exception e){
+			System.out.println("Case 3: Failed \nException");
 		}
 		/*end of case 3*/
 				
-		target = new BigInteger("123456789");
-		position = searchBigInteger(testArrayB, target);
+		try{
+			target = new BigInteger("123456789");
+			position = searchBigInteger(testArrayB, target);
 
-		if(position < 0){
-			++points;
+			if(position < 0){
+				++points;
+			}
+			else{
+				System.out.println("Case 4: Failed \nReturned: "+position+"\nExpecting: "+-1);
+			}
 		}
-		else{
-			System.out.println("Case 4: Failed \nReturned: "+position+"\nExpecting: "+-1);
+		catch(Exception e){
+			System.out.println("Case 4: Failed \nException");
 		}
 		/*end of case 4*/
 		BigInteger[] testArrayC = {
@@ -72,48 +94,68 @@ public class TestQuestion2 extends Question2 {
 		//System.out.print("\n\nThe testArrayB: ");
 		//printArray(testArrayB);
 		BigInteger answer3 = new BigInteger("111");		
-		max = findLargestBigInteger(testArrayC);
-		//System.out.print(max);
-		if(max.equals(answer3)){
-			++points;
+		try{
+			max = findLargestBigInteger(testArrayC);
+			//System.out.print(max);
+			if(max.equals(answer3)){
+				++points;
+			}
+			else{
+				System.out.println("Case 5: Failed \nReturned: "+max+"\nExpecting: "+answer3);
+			}
 		}
-		else{
-			System.out.println("Case 5: Failed \nReturned: "+max+"\nExpecting: "+answer3);
+		catch(Exception e){
+			System.out.println("Case 5: Failed \nException");
 		}
 		/*end of case 5*/
 				
 		target = new BigInteger("5");
-		position = searchBigInteger(testArrayC, target);
-		final int case6 = 4;
+		try{
+			position = searchBigInteger(testArrayC, target);
+			final int case6 = 4;
 
-		if(position == case6){
-			++points;
+			if(position == case6){
+				++points;
+			}
+			else{
+				System.out.println("Case 6: Failed \nReturned: "+position+"\nExpecting: "+case6);
+			}
 		}
-		else{
-			System.out.println("Case 6: Failed \nReturned: "+position+"\nExpecting: "+case6);
+		catch(Exception e){
+			System.out.println("Case 6: Failed \nException");
 		}
 		/*end of case 6*/
 
 		final int case7 = 0;
-		target = new BigInteger("0");
-		position = searchBigInteger(testArrayC, target);
+		try{
+			target = new BigInteger("0");
+			position = searchBigInteger(testArrayC, target);
 
-		if(position == case7){
-			++points;
+			if(position == case7){
+				++points;
+			}
+			else{
+				System.out.println("Case 7: Failed \nReturned: "+position+"\nExpecting: "+case7);
+			}
 		}
-		else{
-			System.out.println("Case 7: Failed \nReturned: "+position+"\nExpecting: "+case7);
+		catch(Exception e){
+			System.out.println("Case 7: Failed \nException");
 		}
 		/*end of case 7*/
 		final int case8 = 1;
 		target = new BigInteger("111");
-		position = searchBigInteger(testArrayC, target);
+		try{
+			position = searchBigInteger(testArrayC, target);
 
-		if(position == case8){
-			++points;
+			if(position == case8){
+				++points;
+			}
+			else{
+				System.out.println("Case 8: Failed \nReturned: "+position+"\nExpecting: "+case8);
+			}
 		}
-		else{
-			System.out.println("Case 8: Failed \nReturned: "+position+"\nExpecting: "+case8);
+		catch(Exception e){
+			System.out.println("Case 8: Failed \nException");
 		}
 		/*end of case 8*/
 		/*
@@ -129,7 +171,7 @@ public class TestQuestion2 extends Question2 {
 		}
 		
 		*/
-		System.out.println("Score "+points+" out of 8");
+		System.out.println("Points "+points+" out of 8");
 
 	}
 	
